@@ -1,0 +1,12 @@
+sources:
+  - name: Star Wars 
+    handler:
+      graphql:
+        endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
+  - name: Countries 
+    handler:
+      graphql:
+        endpoint: https://countries.trevorblades.com/graphql
+
+serve:
+  playground: true
