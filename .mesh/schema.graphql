@@ -3,37 +3,37 @@ schema {
 }
 
 type Query {
-  allFilms(after: String, first: Int, before: String, last: Int): FilmsConnection
-  film(id: ID, filmID: ID): Film
-  allPeople(after: String, first: Int, before: String, last: Int): PeopleConnection
-  person(id: ID, personID: ID): Person
-  allPlanets(after: String, first: Int, before: String, last: Int): PlanetsConnection
-  planet(id: ID, planetID: ID): Planet
-  allSpecies(after: String, first: Int, before: String, last: Int): SpeciesConnection
-  species(id: ID, speciesID: ID): Species
-  allStarships(after: String, first: Int, before: String, last: Int): StarshipsConnection
-  starship(id: ID, starshipID: ID): Starship
-  allVehicles(after: String, first: Int, before: String, last: Int): VehiclesConnection
-  vehicle(id: ID, vehicleID: ID): Vehicle
+  starwars_allFilms(after: String, first: Int, before: String, last: Int): starwars_FilmsConnection
+  starwars_film(id: ID, filmID: ID): starwars_Film
+  starwars_allPeople(after: String, first: Int, before: String, last: Int): starwars_PeopleConnection
+  starwars_person(id: ID, personID: ID): starwars_Person
+  starwars_allPlanets(after: String, first: Int, before: String, last: Int): starwars_PlanetsConnection
+  starwars_planet(id: ID, planetID: ID): starwars_Planet
+  starwars_allSpecies(after: String, first: Int, before: String, last: Int): starwars_SpeciesConnection
+  starwars_species(id: ID, speciesID: ID): starwars_Species
+  starwars_allStarships(after: String, first: Int, before: String, last: Int): starwars_StarshipsConnection
+  starwars_starship(id: ID, starshipID: ID): starwars_Starship
+  starwars_allVehicles(after: String, first: Int, before: String, last: Int): starwars_VehiclesConnection
+  starwars_vehicle(id: ID, vehicleID: ID): starwars_Vehicle
   """Fetches an object given its ID"""
-  node(
+  starwars_node(
     """The ID of an object"""
     id: ID!
-  ): Node
-  continent(code: ID!): Continent
-  continents(filter: ContinentFilterInput = {}): [Continent!]!
-  countries(filter: CountryFilterInput = {}): [Country!]!
-  country(code: ID!): Country
-  language(code: ID!): Language
-  languages(filter: LanguageFilterInput = {}): [Language!]!
+  ): starwars_Node
+  countries_continent(code: ID!): countries_Continent
+  countries_continents(filter: countries_ContinentFilterInput = {}): [countries_Continent!]!
+  countries_countries(filter: countries_CountryFilterInput = {}): [countries_Country!]!
+  countries_country(code: ID!): countries_Country
+  countries_language(code: ID!): countries_Language
+  countries_languages(filter: countries_LanguageFilterInput = {}): [countries_Language!]!
 }
 
 """A connection to a list of items."""
-type FilmsConnection {
+type starwars_FilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmsEdge]
+  edges: [starwars_FilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -49,11 +49,11 @@ type FilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """Information about pagination in a connection."""
-type PageInfo {
+type starwars_PageInfo {
   """When paginating forwards, are there more items?"""
   hasNextPage: Boolean!
   """When paginating backwards, are there more items?"""
@@ -65,15 +65,15 @@ type PageInfo {
 }
 
 """An edge in a connection."""
-type FilmsEdge {
+type starwars_FilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A single film."""
-type Film implements Node {
+type starwars_Film implements starwars_Node {
   """The title of this film."""
   title: String
   """The episode number of this film."""
@@ -86,11 +86,11 @@ type Film implements Node {
   producers: [String]
   """The ISO 8601 date format of film release at original creator country."""
   releaseDate: String
-  speciesConnection(after: String, first: Int, before: String, last: Int): FilmSpeciesConnection
-  starshipConnection(after: String, first: Int, before: String, last: Int): FilmStarshipsConnection
-  vehicleConnection(after: String, first: Int, before: String, last: Int): FilmVehiclesConnection
-  characterConnection(after: String, first: Int, before: String, last: Int): FilmCharactersConnection
-  planetConnection(after: String, first: Int, before: String, last: Int): FilmPlanetsConnection
+  speciesConnection(after: String, first: Int, before: String, last: Int): starwars_FilmSpeciesConnection
+  starshipConnection(after: String, first: Int, before: String, last: Int): starwars_FilmStarshipsConnection
+  vehicleConnection(after: String, first: Int, before: String, last: Int): starwars_FilmVehiclesConnection
+  characterConnection(after: String, first: Int, before: String, last: Int): starwars_FilmCharactersConnection
+  planetConnection(after: String, first: Int, before: String, last: Int): starwars_FilmPlanetsConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -100,17 +100,17 @@ type Film implements Node {
 }
 
 """An object with an ID"""
-interface Node {
+interface starwars_Node {
   """The id of the object."""
   id: ID!
 }
 
 """A connection to a list of items."""
-type FilmSpeciesConnection {
+type starwars_FilmSpeciesConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmSpeciesEdge]
+  edges: [starwars_FilmSpeciesEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -126,19 +126,19 @@ type FilmSpeciesConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  species: [Species]
+  species: [starwars_Species]
 }
 
 """An edge in a connection."""
-type FilmSpeciesEdge {
+type starwars_FilmSpeciesEdge {
   """The item at the end of the edge"""
-  node: Species
+  node: starwars_Species
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A type of person or character within the Star Wars Universe."""
-type Species implements Node {
+type starwars_Species implements starwars_Node {
   """The name of this species."""
   name: String
   """The classification of this species, such as "mammal" or "reptile"."""
@@ -167,9 +167,9 @@ type Species implements Node {
   """The language commonly spoken by this species."""
   language: String
   """A planet that this species originates from."""
-  homeworld: Planet
-  personConnection(after: String, first: Int, before: String, last: Int): SpeciesPeopleConnection
-  filmConnection(after: String, first: Int, before: String, last: Int): SpeciesFilmsConnection
+  homeworld: starwars_Planet
+  personConnection(after: String, first: Int, before: String, last: Int): starwars_SpeciesPeopleConnection
+  filmConnection(after: String, first: Int, before: String, last: Int): starwars_SpeciesFilmsConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -182,7 +182,7 @@ type Species implements Node {
 A large mass, planet or planetoid in the Star Wars Universe, at the time of
 0 ABY.
 """
-type Planet implements Node {
+type starwars_Planet implements starwars_Node {
   """The name of this planet."""
   name: String
   """The diameter of this planet in kilometers."""
@@ -213,8 +213,8 @@ type Planet implements Node {
   of water.
   """
   surfaceWater: Float
-  residentConnection(after: String, first: Int, before: String, last: Int): PlanetResidentsConnection
-  filmConnection(after: String, first: Int, before: String, last: Int): PlanetFilmsConnection
+  residentConnection(after: String, first: Int, before: String, last: Int): starwars_PlanetResidentsConnection
+  filmConnection(after: String, first: Int, before: String, last: Int): starwars_PlanetFilmsConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -224,11 +224,11 @@ type Planet implements Node {
 }
 
 """A connection to a list of items."""
-type PlanetResidentsConnection {
+type starwars_PlanetResidentsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PlanetResidentsEdge]
+  edges: [starwars_PlanetResidentsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -244,19 +244,19 @@ type PlanetResidentsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  residents: [Person]
+  residents: [starwars_Person]
 }
 
 """An edge in a connection."""
-type PlanetResidentsEdge {
+type starwars_PlanetResidentsEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """An individual person or character within the Star Wars universe."""
-type Person implements Node {
+type starwars_Person implements starwars_Node {
   """The name of this person."""
   name: String
   """
@@ -287,12 +287,12 @@ type Person implements Node {
   """The skin color of this person."""
   skinColor: String
   """A planet that this person was born on or inhabits."""
-  homeworld: Planet
-  filmConnection(after: String, first: Int, before: String, last: Int): PersonFilmsConnection
+  homeworld: starwars_Planet
+  filmConnection(after: String, first: Int, before: String, last: Int): starwars_PersonFilmsConnection
   """The species that this person belongs to, or null if unknown."""
-  species: Species
-  starshipConnection(after: String, first: Int, before: String, last: Int): PersonStarshipsConnection
-  vehicleConnection(after: String, first: Int, before: String, last: Int): PersonVehiclesConnection
+  species: starwars_Species
+  starshipConnection(after: String, first: Int, before: String, last: Int): starwars_PersonStarshipsConnection
+  vehicleConnection(after: String, first: Int, before: String, last: Int): starwars_PersonVehiclesConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -302,11 +302,11 @@ type Person implements Node {
 }
 
 """A connection to a list of items."""
-type PersonFilmsConnection {
+type starwars_PersonFilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PersonFilmsEdge]
+  edges: [starwars_PersonFilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -322,23 +322,23 @@ type PersonFilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """An edge in a connection."""
-type PersonFilmsEdge {
+type starwars_PersonFilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type PersonStarshipsConnection {
+type starwars_PersonStarshipsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PersonStarshipsEdge]
+  edges: [starwars_PersonStarshipsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -354,19 +354,19 @@ type PersonStarshipsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  starships: [Starship]
+  starships: [starwars_Starship]
 }
 
 """An edge in a connection."""
-type PersonStarshipsEdge {
+type starwars_PersonStarshipsEdge {
   """The item at the end of the edge"""
-  node: Starship
+  node: starwars_Starship
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A single transport craft that has hyperdrive capability."""
-type Starship implements Node {
+type starwars_Starship implements starwars_Node {
   """The name of this starship. The common name, such as "Death Star"."""
   name: String
   """
@@ -411,8 +411,8 @@ type Starship implements Node {
   entire crew without having to resupply.
   """
   consumables: String
-  pilotConnection(after: String, first: Int, before: String, last: Int): StarshipPilotsConnection
-  filmConnection(after: String, first: Int, before: String, last: Int): StarshipFilmsConnection
+  pilotConnection(after: String, first: Int, before: String, last: Int): starwars_StarshipPilotsConnection
+  filmConnection(after: String, first: Int, before: String, last: Int): starwars_StarshipFilmsConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -422,11 +422,11 @@ type Starship implements Node {
 }
 
 """A connection to a list of items."""
-type StarshipPilotsConnection {
+type starwars_StarshipPilotsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [StarshipPilotsEdge]
+  edges: [starwars_StarshipPilotsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -442,23 +442,23 @@ type StarshipPilotsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  pilots: [Person]
+  pilots: [starwars_Person]
 }
 
 """An edge in a connection."""
-type StarshipPilotsEdge {
+type starwars_StarshipPilotsEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type StarshipFilmsConnection {
+type starwars_StarshipFilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [StarshipFilmsEdge]
+  edges: [starwars_StarshipFilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -474,23 +474,23 @@ type StarshipFilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """An edge in a connection."""
-type StarshipFilmsEdge {
+type starwars_StarshipFilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type PersonVehiclesConnection {
+type starwars_PersonVehiclesConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PersonVehiclesEdge]
+  edges: [starwars_PersonVehiclesEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -506,19 +506,19 @@ type PersonVehiclesConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  vehicles: [Vehicle]
+  vehicles: [starwars_Vehicle]
 }
 
 """An edge in a connection."""
-type PersonVehiclesEdge {
+type starwars_PersonVehiclesEdge {
   """The item at the end of the edge"""
-  node: Vehicle
+  node: starwars_Vehicle
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A single transport craft that does not have hyperdrive capability"""
-type Vehicle implements Node {
+type starwars_Vehicle implements starwars_Node {
   """
   The name of this vehicle. The common name, such as "Sand Crawler" or "Speeder
   bike".
@@ -550,8 +550,8 @@ type Vehicle implements Node {
   entire crew without having to resupply.
   """
   consumables: String
-  pilotConnection(after: String, first: Int, before: String, last: Int): VehiclePilotsConnection
-  filmConnection(after: String, first: Int, before: String, last: Int): VehicleFilmsConnection
+  pilotConnection(after: String, first: Int, before: String, last: Int): starwars_VehiclePilotsConnection
+  filmConnection(after: String, first: Int, before: String, last: Int): starwars_VehicleFilmsConnection
   """The ISO 8601 date format of the time that this resource was created."""
   created: String
   """The ISO 8601 date format of the time that this resource was edited."""
@@ -561,11 +561,11 @@ type Vehicle implements Node {
 }
 
 """A connection to a list of items."""
-type VehiclePilotsConnection {
+type starwars_VehiclePilotsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [VehiclePilotsEdge]
+  edges: [starwars_VehiclePilotsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -581,23 +581,23 @@ type VehiclePilotsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  pilots: [Person]
+  pilots: [starwars_Person]
 }
 
 """An edge in a connection."""
-type VehiclePilotsEdge {
+type starwars_VehiclePilotsEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type VehicleFilmsConnection {
+type starwars_VehicleFilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [VehicleFilmsEdge]
+  edges: [starwars_VehicleFilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -613,23 +613,23 @@ type VehicleFilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """An edge in a connection."""
-type VehicleFilmsEdge {
+type starwars_VehicleFilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type PlanetFilmsConnection {
+type starwars_PlanetFilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PlanetFilmsEdge]
+  edges: [starwars_PlanetFilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -645,23 +645,23 @@ type PlanetFilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """An edge in a connection."""
-type PlanetFilmsEdge {
+type starwars_PlanetFilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type SpeciesPeopleConnection {
+type starwars_SpeciesPeopleConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [SpeciesPeopleEdge]
+  edges: [starwars_SpeciesPeopleEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -677,23 +677,23 @@ type SpeciesPeopleConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  people: [Person]
+  people: [starwars_Person]
 }
 
 """An edge in a connection."""
-type SpeciesPeopleEdge {
+type starwars_SpeciesPeopleEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type SpeciesFilmsConnection {
+type starwars_SpeciesFilmsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [SpeciesFilmsEdge]
+  edges: [starwars_SpeciesFilmsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -709,23 +709,23 @@ type SpeciesFilmsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  films: [Film]
+  films: [starwars_Film]
 }
 
 """An edge in a connection."""
-type SpeciesFilmsEdge {
+type starwars_SpeciesFilmsEdge {
   """The item at the end of the edge"""
-  node: Film
+  node: starwars_Film
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type FilmStarshipsConnection {
+type starwars_FilmStarshipsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmStarshipsEdge]
+  edges: [starwars_FilmStarshipsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -741,23 +741,23 @@ type FilmStarshipsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  starships: [Starship]
+  starships: [starwars_Starship]
 }
 
 """An edge in a connection."""
-type FilmStarshipsEdge {
+type starwars_FilmStarshipsEdge {
   """The item at the end of the edge"""
-  node: Starship
+  node: starwars_Starship
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type FilmVehiclesConnection {
+type starwars_FilmVehiclesConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmVehiclesEdge]
+  edges: [starwars_FilmVehiclesEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -773,23 +773,23 @@ type FilmVehiclesConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  vehicles: [Vehicle]
+  vehicles: [starwars_Vehicle]
 }
 
 """An edge in a connection."""
-type FilmVehiclesEdge {
+type starwars_FilmVehiclesEdge {
   """The item at the end of the edge"""
-  node: Vehicle
+  node: starwars_Vehicle
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type FilmCharactersConnection {
+type starwars_FilmCharactersConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmCharactersEdge]
+  edges: [starwars_FilmCharactersEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -805,23 +805,23 @@ type FilmCharactersConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  characters: [Person]
+  characters: [starwars_Person]
 }
 
 """An edge in a connection."""
-type FilmCharactersEdge {
+type starwars_FilmCharactersEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type FilmPlanetsConnection {
+type starwars_FilmPlanetsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [FilmPlanetsEdge]
+  edges: [starwars_FilmPlanetsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -837,23 +837,23 @@ type FilmPlanetsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  planets: [Planet]
+  planets: [starwars_Planet]
 }
 
 """An edge in a connection."""
-type FilmPlanetsEdge {
+type starwars_FilmPlanetsEdge {
   """The item at the end of the edge"""
-  node: Planet
+  node: starwars_Planet
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type PeopleConnection {
+type starwars_PeopleConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PeopleEdge]
+  edges: [starwars_PeopleEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -869,23 +869,23 @@ type PeopleConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  people: [Person]
+  people: [starwars_Person]
 }
 
 """An edge in a connection."""
-type PeopleEdge {
+type starwars_PeopleEdge {
   """The item at the end of the edge"""
-  node: Person
+  node: starwars_Person
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type PlanetsConnection {
+type starwars_PlanetsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [PlanetsEdge]
+  edges: [starwars_PlanetsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -901,23 +901,23 @@ type PlanetsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  planets: [Planet]
+  planets: [starwars_Planet]
 }
 
 """An edge in a connection."""
-type PlanetsEdge {
+type starwars_PlanetsEdge {
   """The item at the end of the edge"""
-  node: Planet
+  node: starwars_Planet
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type SpeciesConnection {
+type starwars_SpeciesConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [SpeciesEdge]
+  edges: [starwars_SpeciesEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -933,23 +933,23 @@ type SpeciesConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  species: [Species]
+  species: [starwars_Species]
 }
 
 """An edge in a connection."""
-type SpeciesEdge {
+type starwars_SpeciesEdge {
   """The item at the end of the edge"""
-  node: Species
+  node: starwars_Species
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type StarshipsConnection {
+type starwars_StarshipsConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [StarshipsEdge]
+  edges: [starwars_StarshipsEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -965,23 +965,23 @@ type StarshipsConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  starships: [Starship]
+  starships: [starwars_Starship]
 }
 
 """An edge in a connection."""
-type StarshipsEdge {
+type starwars_StarshipsEdge {
   """The item at the end of the edge"""
-  node: Starship
+  node: starwars_Starship
   """A cursor for use in pagination"""
   cursor: String!
 }
 
 """A connection to a list of items."""
-type VehiclesConnection {
+type starwars_VehiclesConnection {
   """Information to aid in pagination."""
-  pageInfo: PageInfo!
+  pageInfo: starwars_PageInfo!
   """A list of edges."""
-  edges: [VehiclesEdge]
+  edges: [starwars_VehiclesEdge]
   """
   A count of the total number of objects in this connection, ignoring pagination.
   This allows a client to fetch the first five objects by passing "5" as the
@@ -997,70 +997,70 @@ type VehiclesConnection {
   the edge to enable efficient pagination, this shortcut cannot be used, and the
   full "{ edges { node } }" version should be used instead.
   """
-  vehicles: [Vehicle]
+  vehicles: [starwars_Vehicle]
 }
 
 """An edge in a connection."""
-type VehiclesEdge {
+type starwars_VehiclesEdge {
   """The item at the end of the edge"""
-  node: Vehicle
+  node: starwars_Vehicle
   """A cursor for use in pagination"""
   cursor: String!
 }
 
-type Continent {
+type countries_Continent {
   code: ID!
-  countries: [Country!]!
+  countries: [countries_Country!]!
   name: String!
 }
 
-input ContinentFilterInput {
-  code: StringQueryOperatorInput
+input countries_ContinentFilterInput {
+  code: countries_StringQueryOperatorInput
 }
 
-type Country {
+type countries_Country {
   awsRegion: String!
   capital: String
   code: ID!
-  continent: Continent!
+  continent: countries_Continent!
   currencies: [String!]!
   currency: String
   emoji: String!
   emojiU: String!
-  languages: [Language!]!
+  languages: [countries_Language!]!
   name(lang: String): String!
   native: String!
   phone: String!
   phones: [String!]!
-  states: [State!]!
-  subdivisions: [Subdivision!]!
+  states: [countries_State!]!
+  subdivisions: [countries_Subdivision!]!
 }
 
-input CountryFilterInput {
-  code: StringQueryOperatorInput
-  continent: StringQueryOperatorInput
-  currency: StringQueryOperatorInput
-  name: StringQueryOperatorInput
+input countries_CountryFilterInput {
+  code: countries_StringQueryOperatorInput
+  continent: countries_StringQueryOperatorInput
+  currency: countries_StringQueryOperatorInput
+  name: countries_StringQueryOperatorInput
 }
 
-type Language {
+type countries_Language {
   code: ID!
   name: String!
   native: String!
   rtl: Boolean!
 }
 
-input LanguageFilterInput {
-  code: StringQueryOperatorInput
+input countries_LanguageFilterInput {
+  code: countries_StringQueryOperatorInput
 }
 
-type State {
+type countries_State {
   code: String
-  country: Country!
+  country: countries_Country!
   name: String!
 }
 
-input StringQueryOperatorInput {
+input countries_StringQueryOperatorInput {
   eq: String
   in: [String!]
   ne: String
@@ -1068,7 +1068,7 @@ input StringQueryOperatorInput {
   regex: String
 }
 
-type Subdivision {
+type countries_Subdivision {
   code: ID!
   emoji: String
   name: String!

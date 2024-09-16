@@ -5,8 +5,6 @@ Combines multiple graphql endpoints to one GraphiQL GUI
 ## Setup
 
 ```bash
-cp .meshrcexample.yaml .meshrc.yaml
-
 yarn
 
 yarn dev

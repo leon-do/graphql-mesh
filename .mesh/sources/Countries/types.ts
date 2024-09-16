@@ -20,103 +20,103 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
-export type Continent = {
+export type countries_Continent = {
   code: Scalars['ID']['output'];
-  countries: Array<Country>;
+  countries: Array<countries_Country>;
   name: Scalars['String']['output'];
 };
 
-export type ContinentFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
+export type countries_ContinentFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
-export type Country = {
+export type countries_Country = {
   awsRegion: Scalars['String']['output'];
   capital?: Maybe<Scalars['String']['output']>;
   code: Scalars['ID']['output'];
-  continent: Continent;
+  continent: countries_Continent;
   currencies: Array<Scalars['String']['output']>;
   currency?: Maybe<Scalars['String']['output']>;
   emoji: Scalars['String']['output'];
   emojiU: Scalars['String']['output'];
-  languages: Array<Language>;
+  languages: Array<countries_Language>;
   name: Scalars['String']['output'];
   native: Scalars['String']['output'];
   phone: Scalars['String']['output'];
   phones: Array<Scalars['String']['output']>;
-  states: Array<State>;
-  subdivisions: Array<Subdivision>;
+  states: Array<countries_State>;
+  subdivisions: Array<countries_Subdivision>;
 };
 
 
-export type CountrynameArgs = {
+export type countries_CountrynameArgs = {
   lang?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type CountryFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
-  continent?: InputMaybe<StringQueryOperatorInput>;
-  currency?: InputMaybe<StringQueryOperatorInput>;
-  name?: InputMaybe<StringQueryOperatorInput>;
+export type countries_CountryFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
+  continent?: InputMaybe<countries_StringQueryOperatorInput>;
+  currency?: InputMaybe<countries_StringQueryOperatorInput>;
+  name?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
-export type Language = {
+export type countries_Language = {
   code: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   native: Scalars['String']['output'];
   rtl: Scalars['Boolean']['output'];
 };
 
-export type LanguageFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
+export type countries_LanguageFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
 export type Query = {
-  continent?: Maybe<Continent>;
-  continents: Array<Continent>;
-  countries: Array<Country>;
-  country?: Maybe<Country>;
-  language?: Maybe<Language>;
-  languages: Array<Language>;
+  countries_continent?: Maybe<countries_Continent>;
+  countries_continents: Array<countries_Continent>;
+  countries_countries: Array<countries_Country>;
+  countries_country?: Maybe<countries_Country>;
+  countries_language?: Maybe<countries_Language>;
+  countries_languages: Array<countries_Language>;
 };
 
 
-export type QuerycontinentArgs = {
+export type Querycountries_continentArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerycontinentsArgs = {
-  filter?: InputMaybe<ContinentFilterInput>;
+export type Querycountries_continentsArgs = {
+  filter?: InputMaybe<countries_ContinentFilterInput>;
 };
 
 
-export type QuerycountriesArgs = {
-  filter?: InputMaybe<CountryFilterInput>;
+export type Querycountries_countriesArgs = {
+  filter?: InputMaybe<countries_CountryFilterInput>;
 };
 
 
-export type QuerycountryArgs = {
+export type Querycountries_countryArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerylanguageArgs = {
+export type Querycountries_languageArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerylanguagesArgs = {
-  filter?: InputMaybe<LanguageFilterInput>;
+export type Querycountries_languagesArgs = {
+  filter?: InputMaybe<countries_LanguageFilterInput>;
 };
 
-export type State = {
+export type countries_State = {
   code?: Maybe<Scalars['String']['output']>;
-  country: Country;
+  country: countries_Country;
   name: Scalars['String']['output'];
 };
 
-export type StringQueryOperatorInput = {
+export type countries_StringQueryOperatorInput = {
   eq?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<Scalars['String']['input']>>;
   ne?: InputMaybe<Scalars['String']['input']>;
@@ -124,7 +124,7 @@ export type StringQueryOperatorInput = {
   regex?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Subdivision = {
+export type countries_Subdivision = {
   code: Scalars['ID']['output'];
   emoji?: Maybe<Scalars['String']['output']>;
   name: Scalars['String']['output'];
@@ -132,17 +132,17 @@ export type Subdivision = {
 
   export type QuerySdk = {
       /** null **/
-  continent: InContextSdkMethod<Query['continent'], QuerycontinentArgs, MeshContext>,
+  countries_continent: InContextSdkMethod<Query['countries_continent'], Querycountries_continentArgs, MeshContext>,
   /** null **/
-  continents: InContextSdkMethod<Query['continents'], QuerycontinentsArgs, MeshContext>,
+  countries_continents: InContextSdkMethod<Query['countries_continents'], Querycountries_continentsArgs, MeshContext>,
   /** null **/
-  countries: InContextSdkMethod<Query['countries'], QuerycountriesArgs, MeshContext>,
+  countries_countries: InContextSdkMethod<Query['countries_countries'], Querycountries_countriesArgs, MeshContext>,
   /** null **/
-  country: InContextSdkMethod<Query['country'], QuerycountryArgs, MeshContext>,
+  countries_country: InContextSdkMethod<Query['countries_country'], Querycountries_countryArgs, MeshContext>,
   /** null **/
-  language: InContextSdkMethod<Query['language'], QuerylanguageArgs, MeshContext>,
+  countries_language: InContextSdkMethod<Query['countries_language'], Querycountries_languageArgs, MeshContext>,
   /** null **/
-  languages: InContextSdkMethod<Query['languages'], QuerylanguagesArgs, MeshContext>
+  countries_languages: InContextSdkMethod<Query['countries_languages'], Querycountries_languagesArgs, MeshContext>
   };
 
   export type MutationSdk = {

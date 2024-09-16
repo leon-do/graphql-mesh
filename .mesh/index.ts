@@ -6,8 +6,8 @@ import { getMesh, ExecuteMeshFn, SubscribeMeshFn, MeshContext as BaseMeshContext
 import { MeshStore, FsStoreStorageAdapter } from '@graphql-mesh/store';
 import { path as pathModule } from '@graphql-mesh/cross-helpers';
 import { ImportFn } from '@graphql-mesh/types';
-import type { StarWarsTypes } from './sources/Star Wars/types';
 import type { CountriesTypes } from './sources/Countries/types';
+import type { StarWarsTypes } from './sources/Star Wars/types';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -29,30 +29,30 @@ export type Scalars = {
 };
 
 export type Query = {
-  allFilms?: Maybe<FilmsConnection>;
-  film?: Maybe<Film>;
-  allPeople?: Maybe<PeopleConnection>;
-  person?: Maybe<Person>;
-  allPlanets?: Maybe<PlanetsConnection>;
-  planet?: Maybe<Planet>;
-  allSpecies?: Maybe<SpeciesConnection>;
-  species?: Maybe<Species>;
-  allStarships?: Maybe<StarshipsConnection>;
-  starship?: Maybe<Starship>;
-  allVehicles?: Maybe<VehiclesConnection>;
-  vehicle?: Maybe<Vehicle>;
+  starwars_allFilms?: Maybe<starwars_FilmsConnection>;
+  starwars_film?: Maybe<starwars_Film>;
+  starwars_allPeople?: Maybe<starwars_PeopleConnection>;
+  starwars_person?: Maybe<starwars_Person>;
+  starwars_allPlanets?: Maybe<starwars_PlanetsConnection>;
+  starwars_planet?: Maybe<starwars_Planet>;
+  starwars_allSpecies?: Maybe<starwars_SpeciesConnection>;
+  starwars_species?: Maybe<starwars_Species>;
+  starwars_allStarships?: Maybe<starwars_StarshipsConnection>;
+  starwars_starship?: Maybe<starwars_Starship>;
+  starwars_allVehicles?: Maybe<starwars_VehiclesConnection>;
+  starwars_vehicle?: Maybe<starwars_Vehicle>;
   /** Fetches an object given its ID */
-  node?: Maybe<Node>;
-  continent?: Maybe<Continent>;
-  continents: Array<Continent>;
-  countries: Array<Country>;
-  country?: Maybe<Country>;
-  language?: Maybe<Language>;
-  languages: Array<Language>;
+  starwars_node?: Maybe<starwars_Node>;
+  countries_continent?: Maybe<countries_Continent>;
+  countries_continents: Array<countries_Continent>;
+  countries_countries: Array<countries_Country>;
+  countries_country?: Maybe<countries_Country>;
+  countries_language?: Maybe<countries_Language>;
+  countries_languages: Array<countries_Language>;
 };
 
 
-export type QueryallFilmsArgs = {
+export type Querystarwars_allFilmsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -60,13 +60,13 @@ export type QueryallFilmsArgs = {
 };
 
 
-export type QueryfilmArgs = {
+export type Querystarwars_filmArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   filmID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QueryallPeopleArgs = {
+export type Querystarwars_allPeopleArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -74,13 +74,13 @@ export type QueryallPeopleArgs = {
 };
 
 
-export type QuerypersonArgs = {
+export type Querystarwars_personArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   personID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QueryallPlanetsArgs = {
+export type Querystarwars_allPlanetsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -88,13 +88,13 @@ export type QueryallPlanetsArgs = {
 };
 
 
-export type QueryplanetArgs = {
+export type Querystarwars_planetArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   planetID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QueryallSpeciesArgs = {
+export type Querystarwars_allSpeciesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -102,13 +102,13 @@ export type QueryallSpeciesArgs = {
 };
 
 
-export type QueryspeciesArgs = {
+export type Querystarwars_speciesArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   speciesID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QueryallStarshipsArgs = {
+export type Querystarwars_allStarshipsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -116,13 +116,13 @@ export type QueryallStarshipsArgs = {
 };
 
 
-export type QuerystarshipArgs = {
+export type Querystarwars_starshipArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   starshipID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QueryallVehiclesArgs = {
+export type Querystarwars_allVehiclesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -130,52 +130,52 @@ export type QueryallVehiclesArgs = {
 };
 
 
-export type QueryvehicleArgs = {
+export type Querystarwars_vehicleArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   vehicleID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type QuerynodeArgs = {
+export type Querystarwars_nodeArgs = {
   id: Scalars['ID']['input'];
 };
 
 
-export type QuerycontinentArgs = {
+export type Querycountries_continentArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerycontinentsArgs = {
-  filter?: InputMaybe<ContinentFilterInput>;
+export type Querycountries_continentsArgs = {
+  filter?: InputMaybe<countries_ContinentFilterInput>;
 };
 
 
-export type QuerycountriesArgs = {
-  filter?: InputMaybe<CountryFilterInput>;
+export type Querycountries_countriesArgs = {
+  filter?: InputMaybe<countries_CountryFilterInput>;
 };
 
 
-export type QuerycountryArgs = {
+export type Querycountries_countryArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerylanguageArgs = {
+export type Querycountries_languageArgs = {
   code: Scalars['ID']['input'];
 };
 
 
-export type QuerylanguagesArgs = {
-  filter?: InputMaybe<LanguageFilterInput>;
+export type Querycountries_languagesArgs = {
+  filter?: InputMaybe<countries_LanguageFilterInput>;
 };
 
 /** A connection to a list of items. */
-export type FilmsConnection = {
+export type starwars_FilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -191,11 +191,11 @@ export type FilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** Information about pagination in a connection. */
-export type PageInfo = {
+export type starwars_PageInfo = {
   /** When paginating forwards, are there more items? */
   hasNextPage: Scalars['Boolean']['output'];
   /** When paginating backwards, are there more items? */
@@ -207,15 +207,15 @@ export type PageInfo = {
 };
 
 /** An edge in a connection. */
-export type FilmsEdge = {
+export type starwars_FilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single film. */
-export type Film = Node & {
+export type starwars_Film = starwars_Node & {
   /** The title of this film. */
   title?: Maybe<Scalars['String']['output']>;
   /** The episode number of this film. */
@@ -228,11 +228,11 @@ export type Film = Node & {
   producers?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   /** The ISO 8601 date format of film release at original creator country. */
   releaseDate?: Maybe<Scalars['String']['output']>;
-  speciesConnection?: Maybe<FilmSpeciesConnection>;
-  starshipConnection?: Maybe<FilmStarshipsConnection>;
-  vehicleConnection?: Maybe<FilmVehiclesConnection>;
-  characterConnection?: Maybe<FilmCharactersConnection>;
-  planetConnection?: Maybe<FilmPlanetsConnection>;
+  speciesConnection?: Maybe<starwars_FilmSpeciesConnection>;
+  starshipConnection?: Maybe<starwars_FilmStarshipsConnection>;
+  vehicleConnection?: Maybe<starwars_FilmVehiclesConnection>;
+  characterConnection?: Maybe<starwars_FilmCharactersConnection>;
+  planetConnection?: Maybe<starwars_FilmPlanetsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -243,7 +243,7 @@ export type Film = Node & {
 
 
 /** A single film. */
-export type FilmspeciesConnectionArgs = {
+export type starwars_FilmspeciesConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -252,7 +252,7 @@ export type FilmspeciesConnectionArgs = {
 
 
 /** A single film. */
-export type FilmstarshipConnectionArgs = {
+export type starwars_FilmstarshipConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -261,7 +261,7 @@ export type FilmstarshipConnectionArgs = {
 
 
 /** A single film. */
-export type FilmvehicleConnectionArgs = {
+export type starwars_FilmvehicleConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -270,7 +270,7 @@ export type FilmvehicleConnectionArgs = {
 
 
 /** A single film. */
-export type FilmcharacterConnectionArgs = {
+export type starwars_FilmcharacterConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -279,7 +279,7 @@ export type FilmcharacterConnectionArgs = {
 
 
 /** A single film. */
-export type FilmplanetConnectionArgs = {
+export type starwars_FilmplanetConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -287,17 +287,17 @@ export type FilmplanetConnectionArgs = {
 };
 
 /** An object with an ID */
-export type Node = {
+export type starwars_Node = {
   /** The id of the object. */
   id: Scalars['ID']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmSpeciesConnection = {
+export type starwars_FilmSpeciesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmSpeciesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmSpeciesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -313,19 +313,19 @@ export type FilmSpeciesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  species?: Maybe<Array<Maybe<Species>>>;
+  species?: Maybe<Array<Maybe<starwars_Species>>>;
 };
 
 /** An edge in a connection. */
-export type FilmSpeciesEdge = {
+export type starwars_FilmSpeciesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Species>;
+  node?: Maybe<starwars_Species>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A type of person or character within the Star Wars Universe. */
-export type Species = Node & {
+export type starwars_Species = starwars_Node & {
   /** The name of this species. */
   name?: Maybe<Scalars['String']['output']>;
   /** The classification of this species, such as "mammal" or "reptile". */
@@ -354,9 +354,9 @@ export type Species = Node & {
   /** The language commonly spoken by this species. */
   language?: Maybe<Scalars['String']['output']>;
   /** A planet that this species originates from. */
-  homeworld?: Maybe<Planet>;
-  personConnection?: Maybe<SpeciesPeopleConnection>;
-  filmConnection?: Maybe<SpeciesFilmsConnection>;
+  homeworld?: Maybe<starwars_Planet>;
+  personConnection?: Maybe<starwars_SpeciesPeopleConnection>;
+  filmConnection?: Maybe<starwars_SpeciesFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -367,7 +367,7 @@ export type Species = Node & {
 
 
 /** A type of person or character within the Star Wars Universe. */
-export type SpeciespersonConnectionArgs = {
+export type starwars_SpeciespersonConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -376,7 +376,7 @@ export type SpeciespersonConnectionArgs = {
 
 
 /** A type of person or character within the Star Wars Universe. */
-export type SpeciesfilmConnectionArgs = {
+export type starwars_SpeciesfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -387,7 +387,7 @@ export type SpeciesfilmConnectionArgs = {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type Planet = Node & {
+export type starwars_Planet = starwars_Node & {
   /** The name of this planet. */
   name?: Maybe<Scalars['String']['output']>;
   /** The diameter of this planet in kilometers. */
@@ -418,8 +418,8 @@ export type Planet = Node & {
    * of water.
    */
   surfaceWater?: Maybe<Scalars['Float']['output']>;
-  residentConnection?: Maybe<PlanetResidentsConnection>;
-  filmConnection?: Maybe<PlanetFilmsConnection>;
+  residentConnection?: Maybe<starwars_PlanetResidentsConnection>;
+  filmConnection?: Maybe<starwars_PlanetFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -433,7 +433,7 @@ export type Planet = Node & {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type PlanetresidentConnectionArgs = {
+export type starwars_PlanetresidentConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -445,7 +445,7 @@ export type PlanetresidentConnectionArgs = {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type PlanetfilmConnectionArgs = {
+export type starwars_PlanetfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -453,11 +453,11 @@ export type PlanetfilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type PlanetResidentsConnection = {
+export type starwars_PlanetResidentsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetResidentsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetResidentsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -473,19 +473,19 @@ export type PlanetResidentsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  residents?: Maybe<Array<Maybe<Person>>>;
+  residents?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetResidentsEdge = {
+export type starwars_PlanetResidentsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** An individual person or character within the Star Wars universe. */
-export type Person = Node & {
+export type starwars_Person = starwars_Node & {
   /** The name of this person. */
   name?: Maybe<Scalars['String']['output']>;
   /**
@@ -516,12 +516,12 @@ export type Person = Node & {
   /** The skin color of this person. */
   skinColor?: Maybe<Scalars['String']['output']>;
   /** A planet that this person was born on or inhabits. */
-  homeworld?: Maybe<Planet>;
-  filmConnection?: Maybe<PersonFilmsConnection>;
+  homeworld?: Maybe<starwars_Planet>;
+  filmConnection?: Maybe<starwars_PersonFilmsConnection>;
   /** The species that this person belongs to, or null if unknown. */
-  species?: Maybe<Species>;
-  starshipConnection?: Maybe<PersonStarshipsConnection>;
-  vehicleConnection?: Maybe<PersonVehiclesConnection>;
+  species?: Maybe<starwars_Species>;
+  starshipConnection?: Maybe<starwars_PersonStarshipsConnection>;
+  vehicleConnection?: Maybe<starwars_PersonVehiclesConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -532,7 +532,7 @@ export type Person = Node & {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonfilmConnectionArgs = {
+export type starwars_PersonfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -541,7 +541,7 @@ export type PersonfilmConnectionArgs = {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonstarshipConnectionArgs = {
+export type starwars_PersonstarshipConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -550,7 +550,7 @@ export type PersonstarshipConnectionArgs = {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonvehicleConnectionArgs = {
+export type starwars_PersonvehicleConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -558,11 +558,11 @@ export type PersonvehicleConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type PersonFilmsConnection = {
+export type starwars_PersonFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -578,23 +578,23 @@ export type PersonFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type PersonFilmsEdge = {
+export type starwars_PersonFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PersonStarshipsConnection = {
+export type starwars_PersonStarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonStarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonStarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -610,19 +610,19 @@ export type PersonStarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type PersonStarshipsEdge = {
+export type starwars_PersonStarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single transport craft that has hyperdrive capability. */
-export type Starship = Node & {
+export type starwars_Starship = starwars_Node & {
   /** The name of this starship. The common name, such as "Death Star". */
   name?: Maybe<Scalars['String']['output']>;
   /**
@@ -667,8 +667,8 @@ export type Starship = Node & {
    * entire crew without having to resupply.
    */
   consumables?: Maybe<Scalars['String']['output']>;
-  pilotConnection?: Maybe<StarshipPilotsConnection>;
-  filmConnection?: Maybe<StarshipFilmsConnection>;
+  pilotConnection?: Maybe<starwars_StarshipPilotsConnection>;
+  filmConnection?: Maybe<starwars_StarshipFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -679,7 +679,7 @@ export type Starship = Node & {
 
 
 /** A single transport craft that has hyperdrive capability. */
-export type StarshippilotConnectionArgs = {
+export type starwars_StarshippilotConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -688,7 +688,7 @@ export type StarshippilotConnectionArgs = {
 
 
 /** A single transport craft that has hyperdrive capability. */
-export type StarshipfilmConnectionArgs = {
+export type starwars_StarshipfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -696,11 +696,11 @@ export type StarshipfilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type StarshipPilotsConnection = {
+export type starwars_StarshipPilotsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipPilotsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipPilotsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -716,23 +716,23 @@ export type StarshipPilotsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  pilots?: Maybe<Array<Maybe<Person>>>;
+  pilots?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipPilotsEdge = {
+export type starwars_StarshipPilotsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type StarshipFilmsConnection = {
+export type starwars_StarshipFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -748,23 +748,23 @@ export type StarshipFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipFilmsEdge = {
+export type starwars_StarshipFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PersonVehiclesConnection = {
+export type starwars_PersonVehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonVehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonVehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -780,19 +780,19 @@ export type PersonVehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type PersonVehiclesEdge = {
+export type starwars_PersonVehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single transport craft that does not have hyperdrive capability */
-export type Vehicle = Node & {
+export type starwars_Vehicle = starwars_Node & {
   /**
    * The name of this vehicle. The common name, such as "Sand Crawler" or "Speeder
    * bike".
@@ -824,8 +824,8 @@ export type Vehicle = Node & {
    * entire crew without having to resupply.
    */
   consumables?: Maybe<Scalars['String']['output']>;
-  pilotConnection?: Maybe<VehiclePilotsConnection>;
-  filmConnection?: Maybe<VehicleFilmsConnection>;
+  pilotConnection?: Maybe<starwars_VehiclePilotsConnection>;
+  filmConnection?: Maybe<starwars_VehicleFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -836,7 +836,7 @@ export type Vehicle = Node & {
 
 
 /** A single transport craft that does not have hyperdrive capability */
-export type VehiclepilotConnectionArgs = {
+export type starwars_VehiclepilotConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -845,7 +845,7 @@ export type VehiclepilotConnectionArgs = {
 
 
 /** A single transport craft that does not have hyperdrive capability */
-export type VehiclefilmConnectionArgs = {
+export type starwars_VehiclefilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -853,11 +853,11 @@ export type VehiclefilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type VehiclePilotsConnection = {
+export type starwars_VehiclePilotsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehiclePilotsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehiclePilotsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -873,23 +873,23 @@ export type VehiclePilotsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  pilots?: Maybe<Array<Maybe<Person>>>;
+  pilots?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type VehiclePilotsEdge = {
+export type starwars_VehiclePilotsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type VehicleFilmsConnection = {
+export type starwars_VehicleFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehicleFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehicleFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -905,23 +905,23 @@ export type VehicleFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type VehicleFilmsEdge = {
+export type starwars_VehicleFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PlanetFilmsConnection = {
+export type starwars_PlanetFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -937,23 +937,23 @@ export type PlanetFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetFilmsEdge = {
+export type starwars_PlanetFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesPeopleConnection = {
+export type starwars_SpeciesPeopleConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesPeopleEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesPeopleEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -969,23 +969,23 @@ export type SpeciesPeopleConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  people?: Maybe<Array<Maybe<Person>>>;
+  people?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesPeopleEdge = {
+export type starwars_SpeciesPeopleEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesFilmsConnection = {
+export type starwars_SpeciesFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1001,23 +1001,23 @@ export type SpeciesFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesFilmsEdge = {
+export type starwars_SpeciesFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmStarshipsConnection = {
+export type starwars_FilmStarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmStarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmStarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1033,23 +1033,23 @@ export type FilmStarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type FilmStarshipsEdge = {
+export type starwars_FilmStarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmVehiclesConnection = {
+export type starwars_FilmVehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmVehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmVehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1065,23 +1065,23 @@ export type FilmVehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type FilmVehiclesEdge = {
+export type starwars_FilmVehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmCharactersConnection = {
+export type starwars_FilmCharactersConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmCharactersEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmCharactersEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1097,23 +1097,23 @@ export type FilmCharactersConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  characters?: Maybe<Array<Maybe<Person>>>;
+  characters?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type FilmCharactersEdge = {
+export type starwars_FilmCharactersEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmPlanetsConnection = {
+export type starwars_FilmPlanetsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmPlanetsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmPlanetsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1129,23 +1129,23 @@ export type FilmPlanetsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  planets?: Maybe<Array<Maybe<Planet>>>;
+  planets?: Maybe<Array<Maybe<starwars_Planet>>>;
 };
 
 /** An edge in a connection. */
-export type FilmPlanetsEdge = {
+export type starwars_FilmPlanetsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Planet>;
+  node?: Maybe<starwars_Planet>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PeopleConnection = {
+export type starwars_PeopleConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PeopleEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PeopleEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1161,23 +1161,23 @@ export type PeopleConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  people?: Maybe<Array<Maybe<Person>>>;
+  people?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type PeopleEdge = {
+export type starwars_PeopleEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PlanetsConnection = {
+export type starwars_PlanetsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1193,23 +1193,23 @@ export type PlanetsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  planets?: Maybe<Array<Maybe<Planet>>>;
+  planets?: Maybe<Array<Maybe<starwars_Planet>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetsEdge = {
+export type starwars_PlanetsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Planet>;
+  node?: Maybe<starwars_Planet>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesConnection = {
+export type starwars_SpeciesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1225,23 +1225,23 @@ export type SpeciesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  species?: Maybe<Array<Maybe<Species>>>;
+  species?: Maybe<Array<Maybe<starwars_Species>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesEdge = {
+export type starwars_SpeciesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Species>;
+  node?: Maybe<starwars_Species>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type StarshipsConnection = {
+export type starwars_StarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1257,23 +1257,23 @@ export type StarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipsEdge = {
+export type starwars_StarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type VehiclesConnection = {
+export type starwars_VehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1289,75 +1289,75 @@ export type VehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type VehiclesEdge = {
+export type starwars_VehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
-export type Continent = {
+export type countries_Continent = {
   code: Scalars['ID']['output'];
-  countries: Array<Country>;
+  countries: Array<countries_Country>;
   name: Scalars['String']['output'];
 };
 
-export type ContinentFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
+export type countries_ContinentFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
-export type Country = {
+export type countries_Country = {
   awsRegion: Scalars['String']['output'];
   capital?: Maybe<Scalars['String']['output']>;
   code: Scalars['ID']['output'];
-  continent: Continent;
+  continent: countries_Continent;
   currencies: Array<Scalars['String']['output']>;
   currency?: Maybe<Scalars['String']['output']>;
   emoji: Scalars['String']['output'];
   emojiU: Scalars['String']['output'];
-  languages: Array<Language>;
+  languages: Array<countries_Language>;
   name: Scalars['String']['output'];
   native: Scalars['String']['output'];
   phone: Scalars['String']['output'];
   phones: Array<Scalars['String']['output']>;
-  states: Array<State>;
-  subdivisions: Array<Subdivision>;
+  states: Array<countries_State>;
+  subdivisions: Array<countries_Subdivision>;
 };
 
 
-export type CountrynameArgs = {
+export type countries_CountrynameArgs = {
   lang?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type CountryFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
-  continent?: InputMaybe<StringQueryOperatorInput>;
-  currency?: InputMaybe<StringQueryOperatorInput>;
-  name?: InputMaybe<StringQueryOperatorInput>;
+export type countries_CountryFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
+  continent?: InputMaybe<countries_StringQueryOperatorInput>;
+  currency?: InputMaybe<countries_StringQueryOperatorInput>;
+  name?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
-export type Language = {
+export type countries_Language = {
   code: Scalars['ID']['output'];
   name: Scalars['String']['output'];
   native: Scalars['String']['output'];
   rtl: Scalars['Boolean']['output'];
 };
 
-export type LanguageFilterInput = {
-  code?: InputMaybe<StringQueryOperatorInput>;
+export type countries_LanguageFilterInput = {
+  code?: InputMaybe<countries_StringQueryOperatorInput>;
 };
 
-export type State = {
+export type countries_State = {
   code?: Maybe<Scalars['String']['output']>;
-  country: Country;
+  country: countries_Country;
   name: Scalars['String']['output'];
 };
 
-export type StringQueryOperatorInput = {
+export type countries_StringQueryOperatorInput = {
   eq?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<Scalars['String']['input']>>;
   ne?: InputMaybe<Scalars['String']['input']>;
@@ -1365,7 +1365,7 @@ export type StringQueryOperatorInput = {
   regex?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Subdivision = {
+export type countries_Subdivision = {
   code: Scalars['ID']['output'];
   emoji?: Maybe<Scalars['String']['output']>;
   name: Scalars['String']['output'];
@@ -1456,7 +1456,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping of interface types */
 export type ResolversInterfaceTypes<_RefType extends Record<string, unknown>> = ResolversObject<{
-  Node: ( Film ) | ( Species ) | ( Planet ) | ( Person ) | ( Starship ) | ( Vehicle );
+  starwars_Node: ( starwars_Film ) | ( starwars_Species ) | ( starwars_Planet ) | ( starwars_Person ) | ( starwars_Starship ) | ( starwars_Vehicle );
 }>;
 
 /** Mapping between all available schema types and the resolvers types */
@@ -1464,70 +1464,70 @@ export type ResolversTypes = ResolversObject<{
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
-  FilmsConnection: ResolverTypeWrapper<FilmsConnection>;
-  PageInfo: ResolverTypeWrapper<PageInfo>;
+  starwars_FilmsConnection: ResolverTypeWrapper<starwars_FilmsConnection>;
+  starwars_PageInfo: ResolverTypeWrapper<starwars_PageInfo>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
-  FilmsEdge: ResolverTypeWrapper<FilmsEdge>;
-  Film: ResolverTypeWrapper<Film>;
-  Node: ResolverTypeWrapper<ResolversInterfaceTypes<ResolversTypes>['Node']>;
+  starwars_FilmsEdge: ResolverTypeWrapper<starwars_FilmsEdge>;
+  starwars_Film: ResolverTypeWrapper<starwars_Film>;
+  starwars_Node: ResolverTypeWrapper<ResolversInterfaceTypes<ResolversTypes>['starwars_Node']>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
-  FilmSpeciesConnection: ResolverTypeWrapper<FilmSpeciesConnection>;
-  FilmSpeciesEdge: ResolverTypeWrapper<FilmSpeciesEdge>;
-  Species: ResolverTypeWrapper<Species>;
+  starwars_FilmSpeciesConnection: ResolverTypeWrapper<starwars_FilmSpeciesConnection>;
+  starwars_FilmSpeciesEdge: ResolverTypeWrapper<starwars_FilmSpeciesEdge>;
+  starwars_Species: ResolverTypeWrapper<starwars_Species>;
   Float: ResolverTypeWrapper<Scalars['Float']['output']>;
-  Planet: ResolverTypeWrapper<Planet>;
-  PlanetResidentsConnection: ResolverTypeWrapper<PlanetResidentsConnection>;
-  PlanetResidentsEdge: ResolverTypeWrapper<PlanetResidentsEdge>;
-  Person: ResolverTypeWrapper<Person>;
-  PersonFilmsConnection: ResolverTypeWrapper<PersonFilmsConnection>;
-  PersonFilmsEdge: ResolverTypeWrapper<PersonFilmsEdge>;
-  PersonStarshipsConnection: ResolverTypeWrapper<PersonStarshipsConnection>;
-  PersonStarshipsEdge: ResolverTypeWrapper<PersonStarshipsEdge>;
-  Starship: ResolverTypeWrapper<Starship>;
-  StarshipPilotsConnection: ResolverTypeWrapper<StarshipPilotsConnection>;
-  StarshipPilotsEdge: ResolverTypeWrapper<StarshipPilotsEdge>;
-  StarshipFilmsConnection: ResolverTypeWrapper<StarshipFilmsConnection>;
-  StarshipFilmsEdge: ResolverTypeWrapper<StarshipFilmsEdge>;
-  PersonVehiclesConnection: ResolverTypeWrapper<PersonVehiclesConnection>;
-  PersonVehiclesEdge: ResolverTypeWrapper<PersonVehiclesEdge>;
-  Vehicle: ResolverTypeWrapper<Vehicle>;
-  VehiclePilotsConnection: ResolverTypeWrapper<VehiclePilotsConnection>;
-  VehiclePilotsEdge: ResolverTypeWrapper<VehiclePilotsEdge>;
-  VehicleFilmsConnection: ResolverTypeWrapper<VehicleFilmsConnection>;
-  VehicleFilmsEdge: ResolverTypeWrapper<VehicleFilmsEdge>;
-  PlanetFilmsConnection: ResolverTypeWrapper<PlanetFilmsConnection>;
-  PlanetFilmsEdge: ResolverTypeWrapper<PlanetFilmsEdge>;
-  SpeciesPeopleConnection: ResolverTypeWrapper<SpeciesPeopleConnection>;
-  SpeciesPeopleEdge: ResolverTypeWrapper<SpeciesPeopleEdge>;
-  SpeciesFilmsConnection: ResolverTypeWrapper<SpeciesFilmsConnection>;
-  SpeciesFilmsEdge: ResolverTypeWrapper<SpeciesFilmsEdge>;
-  FilmStarshipsConnection: ResolverTypeWrapper<FilmStarshipsConnection>;
-  FilmStarshipsEdge: ResolverTypeWrapper<FilmStarshipsEdge>;
-  FilmVehiclesConnection: ResolverTypeWrapper<FilmVehiclesConnection>;
-  FilmVehiclesEdge: ResolverTypeWrapper<FilmVehiclesEdge>;
-  FilmCharactersConnection: ResolverTypeWrapper<FilmCharactersConnection>;
-  FilmCharactersEdge: ResolverTypeWrapper<FilmCharactersEdge>;
-  FilmPlanetsConnection: ResolverTypeWrapper<FilmPlanetsConnection>;
-  FilmPlanetsEdge: ResolverTypeWrapper<FilmPlanetsEdge>;
-  PeopleConnection: ResolverTypeWrapper<PeopleConnection>;
-  PeopleEdge: ResolverTypeWrapper<PeopleEdge>;
-  PlanetsConnection: ResolverTypeWrapper<PlanetsConnection>;
-  PlanetsEdge: ResolverTypeWrapper<PlanetsEdge>;
-  SpeciesConnection: ResolverTypeWrapper<SpeciesConnection>;
-  SpeciesEdge: ResolverTypeWrapper<SpeciesEdge>;
-  StarshipsConnection: ResolverTypeWrapper<StarshipsConnection>;
-  StarshipsEdge: ResolverTypeWrapper<StarshipsEdge>;
-  VehiclesConnection: ResolverTypeWrapper<VehiclesConnection>;
-  VehiclesEdge: ResolverTypeWrapper<VehiclesEdge>;
-  Continent: ResolverTypeWrapper<Continent>;
-  ContinentFilterInput: ContinentFilterInput;
-  Country: ResolverTypeWrapper<Country>;
-  CountryFilterInput: CountryFilterInput;
-  Language: ResolverTypeWrapper<Language>;
-  LanguageFilterInput: LanguageFilterInput;
-  State: ResolverTypeWrapper<State>;
-  StringQueryOperatorInput: StringQueryOperatorInput;
-  Subdivision: ResolverTypeWrapper<Subdivision>;
+  starwars_Planet: ResolverTypeWrapper<starwars_Planet>;
+  starwars_PlanetResidentsConnection: ResolverTypeWrapper<starwars_PlanetResidentsConnection>;
+  starwars_PlanetResidentsEdge: ResolverTypeWrapper<starwars_PlanetResidentsEdge>;
+  starwars_Person: ResolverTypeWrapper<starwars_Person>;
+  starwars_PersonFilmsConnection: ResolverTypeWrapper<starwars_PersonFilmsConnection>;
+  starwars_PersonFilmsEdge: ResolverTypeWrapper<starwars_PersonFilmsEdge>;
+  starwars_PersonStarshipsConnection: ResolverTypeWrapper<starwars_PersonStarshipsConnection>;
+  starwars_PersonStarshipsEdge: ResolverTypeWrapper<starwars_PersonStarshipsEdge>;
+  starwars_Starship: ResolverTypeWrapper<starwars_Starship>;
+  starwars_StarshipPilotsConnection: ResolverTypeWrapper<starwars_StarshipPilotsConnection>;
+  starwars_StarshipPilotsEdge: ResolverTypeWrapper<starwars_StarshipPilotsEdge>;
+  starwars_StarshipFilmsConnection: ResolverTypeWrapper<starwars_StarshipFilmsConnection>;
+  starwars_StarshipFilmsEdge: ResolverTypeWrapper<starwars_StarshipFilmsEdge>;
+  starwars_PersonVehiclesConnection: ResolverTypeWrapper<starwars_PersonVehiclesConnection>;
+  starwars_PersonVehiclesEdge: ResolverTypeWrapper<starwars_PersonVehiclesEdge>;
+  starwars_Vehicle: ResolverTypeWrapper<starwars_Vehicle>;
+  starwars_VehiclePilotsConnection: ResolverTypeWrapper<starwars_VehiclePilotsConnection>;
+  starwars_VehiclePilotsEdge: ResolverTypeWrapper<starwars_VehiclePilotsEdge>;
+  starwars_VehicleFilmsConnection: ResolverTypeWrapper<starwars_VehicleFilmsConnection>;
+  starwars_VehicleFilmsEdge: ResolverTypeWrapper<starwars_VehicleFilmsEdge>;
+  starwars_PlanetFilmsConnection: ResolverTypeWrapper<starwars_PlanetFilmsConnection>;
+  starwars_PlanetFilmsEdge: ResolverTypeWrapper<starwars_PlanetFilmsEdge>;
+  starwars_SpeciesPeopleConnection: ResolverTypeWrapper<starwars_SpeciesPeopleConnection>;
+  starwars_SpeciesPeopleEdge: ResolverTypeWrapper<starwars_SpeciesPeopleEdge>;
+  starwars_SpeciesFilmsConnection: ResolverTypeWrapper<starwars_SpeciesFilmsConnection>;
+  starwars_SpeciesFilmsEdge: ResolverTypeWrapper<starwars_SpeciesFilmsEdge>;
+  starwars_FilmStarshipsConnection: ResolverTypeWrapper<starwars_FilmStarshipsConnection>;
+  starwars_FilmStarshipsEdge: ResolverTypeWrapper<starwars_FilmStarshipsEdge>;
+  starwars_FilmVehiclesConnection: ResolverTypeWrapper<starwars_FilmVehiclesConnection>;
+  starwars_FilmVehiclesEdge: ResolverTypeWrapper<starwars_FilmVehiclesEdge>;
+  starwars_FilmCharactersConnection: ResolverTypeWrapper<starwars_FilmCharactersConnection>;
+  starwars_FilmCharactersEdge: ResolverTypeWrapper<starwars_FilmCharactersEdge>;
+  starwars_FilmPlanetsConnection: ResolverTypeWrapper<starwars_FilmPlanetsConnection>;
+  starwars_FilmPlanetsEdge: ResolverTypeWrapper<starwars_FilmPlanetsEdge>;
+  starwars_PeopleConnection: ResolverTypeWrapper<starwars_PeopleConnection>;
+  starwars_PeopleEdge: ResolverTypeWrapper<starwars_PeopleEdge>;
+  starwars_PlanetsConnection: ResolverTypeWrapper<starwars_PlanetsConnection>;
+  starwars_PlanetsEdge: ResolverTypeWrapper<starwars_PlanetsEdge>;
+  starwars_SpeciesConnection: ResolverTypeWrapper<starwars_SpeciesConnection>;
+  starwars_SpeciesEdge: ResolverTypeWrapper<starwars_SpeciesEdge>;
+  starwars_StarshipsConnection: ResolverTypeWrapper<starwars_StarshipsConnection>;
+  starwars_StarshipsEdge: ResolverTypeWrapper<starwars_StarshipsEdge>;
+  starwars_VehiclesConnection: ResolverTypeWrapper<starwars_VehiclesConnection>;
+  starwars_VehiclesEdge: ResolverTypeWrapper<starwars_VehiclesEdge>;
+  countries_Continent: ResolverTypeWrapper<countries_Continent>;
+  countries_ContinentFilterInput: countries_ContinentFilterInput;
+  countries_Country: ResolverTypeWrapper<countries_Country>;
+  countries_CountryFilterInput: countries_CountryFilterInput;
+  countries_Language: ResolverTypeWrapper<countries_Language>;
+  countries_LanguageFilterInput: countries_LanguageFilterInput;
+  countries_State: ResolverTypeWrapper<countries_State>;
+  countries_StringQueryOperatorInput: countries_StringQueryOperatorInput;
+  countries_Subdivision: ResolverTypeWrapper<countries_Subdivision>;
 }>;
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -1535,103 +1535,103 @@ export type ResolversParentTypes = ResolversObject<{
   Query: {};
   String: Scalars['String']['output'];
   Int: Scalars['Int']['output'];
-  FilmsConnection: FilmsConnection;
-  PageInfo: PageInfo;
+  starwars_FilmsConnection: starwars_FilmsConnection;
+  starwars_PageInfo: starwars_PageInfo;
   Boolean: Scalars['Boolean']['output'];
-  FilmsEdge: FilmsEdge;
-  Film: Film;
-  Node: ResolversInterfaceTypes<ResolversParentTypes>['Node'];
+  starwars_FilmsEdge: starwars_FilmsEdge;
+  starwars_Film: starwars_Film;
+  starwars_Node: ResolversInterfaceTypes<ResolversParentTypes>['starwars_Node'];
   ID: Scalars['ID']['output'];
-  FilmSpeciesConnection: FilmSpeciesConnection;
-  FilmSpeciesEdge: FilmSpeciesEdge;
-  Species: Species;
+  starwars_FilmSpeciesConnection: starwars_FilmSpeciesConnection;
+  starwars_FilmSpeciesEdge: starwars_FilmSpeciesEdge;
+  starwars_Species: starwars_Species;
   Float: Scalars['Float']['output'];
-  Planet: Planet;
-  PlanetResidentsConnection: PlanetResidentsConnection;
-  PlanetResidentsEdge: PlanetResidentsEdge;
-  Person: Person;
-  PersonFilmsConnection: PersonFilmsConnection;
-  PersonFilmsEdge: PersonFilmsEdge;
-  PersonStarshipsConnection: PersonStarshipsConnection;
-  PersonStarshipsEdge: PersonStarshipsEdge;
-  Starship: Starship;
-  StarshipPilotsConnection: StarshipPilotsConnection;
-  StarshipPilotsEdge: StarshipPilotsEdge;
-  StarshipFilmsConnection: StarshipFilmsConnection;
-  StarshipFilmsEdge: StarshipFilmsEdge;
-  PersonVehiclesConnection: PersonVehiclesConnection;
-  PersonVehiclesEdge: PersonVehiclesEdge;
-  Vehicle: Vehicle;
-  VehiclePilotsConnection: VehiclePilotsConnection;
-  VehiclePilotsEdge: VehiclePilotsEdge;
-  VehicleFilmsConnection: VehicleFilmsConnection;
-  VehicleFilmsEdge: VehicleFilmsEdge;
-  PlanetFilmsConnection: PlanetFilmsConnection;
-  PlanetFilmsEdge: PlanetFilmsEdge;
-  SpeciesPeopleConnection: SpeciesPeopleConnection;
-  SpeciesPeopleEdge: SpeciesPeopleEdge;
-  SpeciesFilmsConnection: SpeciesFilmsConnection;
-  SpeciesFilmsEdge: SpeciesFilmsEdge;
-  FilmStarshipsConnection: FilmStarshipsConnection;
-  FilmStarshipsEdge: FilmStarshipsEdge;
-  FilmVehiclesConnection: FilmVehiclesConnection;
-  FilmVehiclesEdge: FilmVehiclesEdge;
-  FilmCharactersConnection: FilmCharactersConnection;
-  FilmCharactersEdge: FilmCharactersEdge;
-  FilmPlanetsConnection: FilmPlanetsConnection;
-  FilmPlanetsEdge: FilmPlanetsEdge;
-  PeopleConnection: PeopleConnection;
-  PeopleEdge: PeopleEdge;
-  PlanetsConnection: PlanetsConnection;
-  PlanetsEdge: PlanetsEdge;
-  SpeciesConnection: SpeciesConnection;
-  SpeciesEdge: SpeciesEdge;
-  StarshipsConnection: StarshipsConnection;
-  StarshipsEdge: StarshipsEdge;
-  VehiclesConnection: VehiclesConnection;
-  VehiclesEdge: VehiclesEdge;
-  Continent: Continent;
-  ContinentFilterInput: ContinentFilterInput;
-  Country: Country;
-  CountryFilterInput: CountryFilterInput;
-  Language: Language;
-  LanguageFilterInput: LanguageFilterInput;
-  State: State;
-  StringQueryOperatorInput: StringQueryOperatorInput;
-  Subdivision: Subdivision;
+  starwars_Planet: starwars_Planet;
+  starwars_PlanetResidentsConnection: starwars_PlanetResidentsConnection;
+  starwars_PlanetResidentsEdge: starwars_PlanetResidentsEdge;
+  starwars_Person: starwars_Person;
+  starwars_PersonFilmsConnection: starwars_PersonFilmsConnection;
+  starwars_PersonFilmsEdge: starwars_PersonFilmsEdge;
+  starwars_PersonStarshipsConnection: starwars_PersonStarshipsConnection;
+  starwars_PersonStarshipsEdge: starwars_PersonStarshipsEdge;
+  starwars_Starship: starwars_Starship;
+  starwars_StarshipPilotsConnection: starwars_StarshipPilotsConnection;
+  starwars_StarshipPilotsEdge: starwars_StarshipPilotsEdge;
+  starwars_StarshipFilmsConnection: starwars_StarshipFilmsConnection;
+  starwars_StarshipFilmsEdge: starwars_StarshipFilmsEdge;
+  starwars_PersonVehiclesConnection: starwars_PersonVehiclesConnection;
+  starwars_PersonVehiclesEdge: starwars_PersonVehiclesEdge;
+  starwars_Vehicle: starwars_Vehicle;
+  starwars_VehiclePilotsConnection: starwars_VehiclePilotsConnection;
+  starwars_VehiclePilotsEdge: starwars_VehiclePilotsEdge;
+  starwars_VehicleFilmsConnection: starwars_VehicleFilmsConnection;
+  starwars_VehicleFilmsEdge: starwars_VehicleFilmsEdge;
+  starwars_PlanetFilmsConnection: starwars_PlanetFilmsConnection;
+  starwars_PlanetFilmsEdge: starwars_PlanetFilmsEdge;
+  starwars_SpeciesPeopleConnection: starwars_SpeciesPeopleConnection;
+  starwars_SpeciesPeopleEdge: starwars_SpeciesPeopleEdge;
+  starwars_SpeciesFilmsConnection: starwars_SpeciesFilmsConnection;
+  starwars_SpeciesFilmsEdge: starwars_SpeciesFilmsEdge;
+  starwars_FilmStarshipsConnection: starwars_FilmStarshipsConnection;
+  starwars_FilmStarshipsEdge: starwars_FilmStarshipsEdge;
+  starwars_FilmVehiclesConnection: starwars_FilmVehiclesConnection;
+  starwars_FilmVehiclesEdge: starwars_FilmVehiclesEdge;
+  starwars_FilmCharactersConnection: starwars_FilmCharactersConnection;
+  starwars_FilmCharactersEdge: starwars_FilmCharactersEdge;
+  starwars_FilmPlanetsConnection: starwars_FilmPlanetsConnection;
+  starwars_FilmPlanetsEdge: starwars_FilmPlanetsEdge;
+  starwars_PeopleConnection: starwars_PeopleConnection;
+  starwars_PeopleEdge: starwars_PeopleEdge;
+  starwars_PlanetsConnection: starwars_PlanetsConnection;
+  starwars_PlanetsEdge: starwars_PlanetsEdge;
+  starwars_SpeciesConnection: starwars_SpeciesConnection;
+  starwars_SpeciesEdge: starwars_SpeciesEdge;
+  starwars_StarshipsConnection: starwars_StarshipsConnection;
+  starwars_StarshipsEdge: starwars_StarshipsEdge;
+  starwars_VehiclesConnection: starwars_VehiclesConnection;
+  starwars_VehiclesEdge: starwars_VehiclesEdge;
+  countries_Continent: countries_Continent;
+  countries_ContinentFilterInput: countries_ContinentFilterInput;
+  countries_Country: countries_Country;
+  countries_CountryFilterInput: countries_CountryFilterInput;
+  countries_Language: countries_Language;
+  countries_LanguageFilterInput: countries_LanguageFilterInput;
+  countries_State: countries_State;
+  countries_StringQueryOperatorInput: countries_StringQueryOperatorInput;
+  countries_Subdivision: countries_Subdivision;
 }>;
 
 export type QueryResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
-  allFilms?: Resolver<Maybe<ResolversTypes['FilmsConnection']>, ParentType, ContextType, Partial<QueryallFilmsArgs>>;
-  film?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType, Partial<QueryfilmArgs>>;
-  allPeople?: Resolver<Maybe<ResolversTypes['PeopleConnection']>, ParentType, ContextType, Partial<QueryallPeopleArgs>>;
-  person?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType, Partial<QuerypersonArgs>>;
-  allPlanets?: Resolver<Maybe<ResolversTypes['PlanetsConnection']>, ParentType, ContextType, Partial<QueryallPlanetsArgs>>;
-  planet?: Resolver<Maybe<ResolversTypes['Planet']>, ParentType, ContextType, Partial<QueryplanetArgs>>;
-  allSpecies?: Resolver<Maybe<ResolversTypes['SpeciesConnection']>, ParentType, ContextType, Partial<QueryallSpeciesArgs>>;
-  species?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType, Partial<QueryspeciesArgs>>;
-  allStarships?: Resolver<Maybe<ResolversTypes['StarshipsConnection']>, ParentType, ContextType, Partial<QueryallStarshipsArgs>>;
-  starship?: Resolver<Maybe<ResolversTypes['Starship']>, ParentType, ContextType, Partial<QuerystarshipArgs>>;
-  allVehicles?: Resolver<Maybe<ResolversTypes['VehiclesConnection']>, ParentType, ContextType, Partial<QueryallVehiclesArgs>>;
-  vehicle?: Resolver<Maybe<ResolversTypes['Vehicle']>, ParentType, ContextType, Partial<QueryvehicleArgs>>;
-  node?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType, RequireFields<QuerynodeArgs, 'id'>>;
-  continent?: Resolver<Maybe<ResolversTypes['Continent']>, ParentType, ContextType, RequireFields<QuerycontinentArgs, 'code'>>;
-  continents?: Resolver<Array<ResolversTypes['Continent']>, ParentType, ContextType, RequireFields<QuerycontinentsArgs, 'filter'>>;
-  countries?: Resolver<Array<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<QuerycountriesArgs, 'filter'>>;
-  country?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<QuerycountryArgs, 'code'>>;
-  language?: Resolver<Maybe<ResolversTypes['Language']>, ParentType, ContextType, RequireFields<QuerylanguageArgs, 'code'>>;
-  languages?: Resolver<Array<ResolversTypes['Language']>, ParentType, ContextType, RequireFields<QuerylanguagesArgs, 'filter'>>;
+  starwars_allFilms?: Resolver<Maybe<ResolversTypes['starwars_FilmsConnection']>, ParentType, ContextType, Partial<Querystarwars_allFilmsArgs>>;
+  starwars_film?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType, Partial<Querystarwars_filmArgs>>;
+  starwars_allPeople?: Resolver<Maybe<ResolversTypes['starwars_PeopleConnection']>, ParentType, ContextType, Partial<Querystarwars_allPeopleArgs>>;
+  starwars_person?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType, Partial<Querystarwars_personArgs>>;
+  starwars_allPlanets?: Resolver<Maybe<ResolversTypes['starwars_PlanetsConnection']>, ParentType, ContextType, Partial<Querystarwars_allPlanetsArgs>>;
+  starwars_planet?: Resolver<Maybe<ResolversTypes['starwars_Planet']>, ParentType, ContextType, Partial<Querystarwars_planetArgs>>;
+  starwars_allSpecies?: Resolver<Maybe<ResolversTypes['starwars_SpeciesConnection']>, ParentType, ContextType, Partial<Querystarwars_allSpeciesArgs>>;
+  starwars_species?: Resolver<Maybe<ResolversTypes['starwars_Species']>, ParentType, ContextType, Partial<Querystarwars_speciesArgs>>;
+  starwars_allStarships?: Resolver<Maybe<ResolversTypes['starwars_StarshipsConnection']>, ParentType, ContextType, Partial<Querystarwars_allStarshipsArgs>>;
+  starwars_starship?: Resolver<Maybe<ResolversTypes['starwars_Starship']>, ParentType, ContextType, Partial<Querystarwars_starshipArgs>>;
+  starwars_allVehicles?: Resolver<Maybe<ResolversTypes['starwars_VehiclesConnection']>, ParentType, ContextType, Partial<Querystarwars_allVehiclesArgs>>;
+  starwars_vehicle?: Resolver<Maybe<ResolversTypes['starwars_Vehicle']>, ParentType, ContextType, Partial<Querystarwars_vehicleArgs>>;
+  starwars_node?: Resolver<Maybe<ResolversTypes['starwars_Node']>, ParentType, ContextType, RequireFields<Querystarwars_nodeArgs, 'id'>>;
+  countries_continent?: Resolver<Maybe<ResolversTypes['countries_Continent']>, ParentType, ContextType, RequireFields<Querycountries_continentArgs, 'code'>>;
+  countries_continents?: Resolver<Array<ResolversTypes['countries_Continent']>, ParentType, ContextType, RequireFields<Querycountries_continentsArgs, 'filter'>>;
+  countries_countries?: Resolver<Array<ResolversTypes['countries_Country']>, ParentType, ContextType, RequireFields<Querycountries_countriesArgs, 'filter'>>;
+  countries_country?: Resolver<Maybe<ResolversTypes['countries_Country']>, ParentType, ContextType, RequireFields<Querycountries_countryArgs, 'code'>>;
+  countries_language?: Resolver<Maybe<ResolversTypes['countries_Language']>, ParentType, ContextType, RequireFields<Querycountries_languageArgs, 'code'>>;
+  countries_languages?: Resolver<Array<ResolversTypes['countries_Language']>, ParentType, ContextType, RequireFields<Querycountries_languagesArgs, 'filter'>>;
 }>;
 
-export type FilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmsConnection'] = ResolversParentTypes['FilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmsConnection'] = ResolversParentTypes['starwars_FilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PageInfoResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PageInfo'] = ResolversParentTypes['PageInfo']> = ResolversObject<{
+export type starwars_PageInfoResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PageInfo'] = ResolversParentTypes['starwars_PageInfo']> = ResolversObject<{
   hasNextPage?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   hasPreviousPage?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   startCursor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -1639,50 +1639,50 @@ export type PageInfoResolvers<ContextType = MeshContext, ParentType extends Reso
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmsEdge'] = ResolversParentTypes['FilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_FilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmsEdge'] = ResolversParentTypes['starwars_FilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Film'] = ResolversParentTypes['Film']> = ResolversObject<{
+export type starwars_FilmResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Film'] = ResolversParentTypes['starwars_Film']> = ResolversObject<{
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   episodeID?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   openingCrawl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   director?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   producers?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   releaseDate?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  speciesConnection?: Resolver<Maybe<ResolversTypes['FilmSpeciesConnection']>, ParentType, ContextType, Partial<FilmspeciesConnectionArgs>>;
-  starshipConnection?: Resolver<Maybe<ResolversTypes['FilmStarshipsConnection']>, ParentType, ContextType, Partial<FilmstarshipConnectionArgs>>;
-  vehicleConnection?: Resolver<Maybe<ResolversTypes['FilmVehiclesConnection']>, ParentType, ContextType, Partial<FilmvehicleConnectionArgs>>;
-  characterConnection?: Resolver<Maybe<ResolversTypes['FilmCharactersConnection']>, ParentType, ContextType, Partial<FilmcharacterConnectionArgs>>;
-  planetConnection?: Resolver<Maybe<ResolversTypes['FilmPlanetsConnection']>, ParentType, ContextType, Partial<FilmplanetConnectionArgs>>;
+  speciesConnection?: Resolver<Maybe<ResolversTypes['starwars_FilmSpeciesConnection']>, ParentType, ContextType, Partial<starwars_FilmspeciesConnectionArgs>>;
+  starshipConnection?: Resolver<Maybe<ResolversTypes['starwars_FilmStarshipsConnection']>, ParentType, ContextType, Partial<starwars_FilmstarshipConnectionArgs>>;
+  vehicleConnection?: Resolver<Maybe<ResolversTypes['starwars_FilmVehiclesConnection']>, ParentType, ContextType, Partial<starwars_FilmvehicleConnectionArgs>>;
+  characterConnection?: Resolver<Maybe<ResolversTypes['starwars_FilmCharactersConnection']>, ParentType, ContextType, Partial<starwars_FilmcharacterConnectionArgs>>;
+  planetConnection?: Resolver<Maybe<ResolversTypes['starwars_FilmPlanetsConnection']>, ParentType, ContextType, Partial<starwars_FilmplanetConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type NodeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Node'] = ResolversParentTypes['Node']> = ResolversObject<{
-  __resolveType: TypeResolveFn<'Film' | 'Species' | 'Planet' | 'Person' | 'Starship' | 'Vehicle', ParentType, ContextType>;
+export type starwars_NodeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Node'] = ResolversParentTypes['starwars_Node']> = ResolversObject<{
+  __resolveType: TypeResolveFn<'starwars_Film' | 'starwars_Species' | 'starwars_Planet' | 'starwars_Person' | 'starwars_Starship' | 'starwars_Vehicle', ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 }>;
 
-export type FilmSpeciesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmSpeciesConnection'] = ResolversParentTypes['FilmSpeciesConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmSpeciesEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmSpeciesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmSpeciesConnection'] = ResolversParentTypes['starwars_FilmSpeciesConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmSpeciesEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  species?: Resolver<Maybe<Array<Maybe<ResolversTypes['Species']>>>, ParentType, ContextType>;
+  species?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Species']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmSpeciesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmSpeciesEdge'] = ResolversParentTypes['FilmSpeciesEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType>;
+export type starwars_FilmSpeciesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmSpeciesEdge'] = ResolversParentTypes['starwars_FilmSpeciesEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Species']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Species'] = ResolversParentTypes['Species']> = ResolversObject<{
+export type starwars_SpeciesResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Species'] = ResolversParentTypes['starwars_Species']> = ResolversObject<{
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   classification?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   designation?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -1692,16 +1692,16 @@ export type SpeciesResolvers<ContextType = MeshContext, ParentType extends Resol
   hairColors?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   skinColors?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   language?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  homeworld?: Resolver<Maybe<ResolversTypes['Planet']>, ParentType, ContextType>;
-  personConnection?: Resolver<Maybe<ResolversTypes['SpeciesPeopleConnection']>, ParentType, ContextType, Partial<SpeciespersonConnectionArgs>>;
-  filmConnection?: Resolver<Maybe<ResolversTypes['SpeciesFilmsConnection']>, ParentType, ContextType, Partial<SpeciesfilmConnectionArgs>>;
+  homeworld?: Resolver<Maybe<ResolversTypes['starwars_Planet']>, ParentType, ContextType>;
+  personConnection?: Resolver<Maybe<ResolversTypes['starwars_SpeciesPeopleConnection']>, ParentType, ContextType, Partial<starwars_SpeciespersonConnectionArgs>>;
+  filmConnection?: Resolver<Maybe<ResolversTypes['starwars_SpeciesFilmsConnection']>, ParentType, ContextType, Partial<starwars_SpeciesfilmConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Planet'] = ResolversParentTypes['Planet']> = ResolversObject<{
+export type starwars_PlanetResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Planet'] = ResolversParentTypes['starwars_Planet']> = ResolversObject<{
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   diameter?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   rotationPeriod?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
@@ -1711,29 +1711,29 @@ export type PlanetResolvers<ContextType = MeshContext, ParentType extends Resolv
   climates?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   terrains?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   surfaceWater?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
-  residentConnection?: Resolver<Maybe<ResolversTypes['PlanetResidentsConnection']>, ParentType, ContextType, Partial<PlanetresidentConnectionArgs>>;
-  filmConnection?: Resolver<Maybe<ResolversTypes['PlanetFilmsConnection']>, ParentType, ContextType, Partial<PlanetfilmConnectionArgs>>;
+  residentConnection?: Resolver<Maybe<ResolversTypes['starwars_PlanetResidentsConnection']>, ParentType, ContextType, Partial<starwars_PlanetresidentConnectionArgs>>;
+  filmConnection?: Resolver<Maybe<ResolversTypes['starwars_PlanetFilmsConnection']>, ParentType, ContextType, Partial<starwars_PlanetfilmConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetResidentsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetResidentsConnection'] = ResolversParentTypes['PlanetResidentsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PlanetResidentsEdge']>>>, ParentType, ContextType>;
+export type starwars_PlanetResidentsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetResidentsConnection'] = ResolversParentTypes['starwars_PlanetResidentsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PlanetResidentsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  residents?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  residents?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetResidentsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetResidentsEdge'] = ResolversParentTypes['PlanetResidentsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_PlanetResidentsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetResidentsEdge'] = ResolversParentTypes['starwars_PlanetResidentsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Person'] = ResolversParentTypes['Person']> = ResolversObject<{
+export type starwars_PersonResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Person'] = ResolversParentTypes['starwars_Person']> = ResolversObject<{
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   birthYear?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   eyeColor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -1742,46 +1742,46 @@ export type PersonResolvers<ContextType = MeshContext, ParentType extends Resolv
   height?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   mass?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   skinColor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  homeworld?: Resolver<Maybe<ResolversTypes['Planet']>, ParentType, ContextType>;
-  filmConnection?: Resolver<Maybe<ResolversTypes['PersonFilmsConnection']>, ParentType, ContextType, Partial<PersonfilmConnectionArgs>>;
-  species?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType>;
-  starshipConnection?: Resolver<Maybe<ResolversTypes['PersonStarshipsConnection']>, ParentType, ContextType, Partial<PersonstarshipConnectionArgs>>;
-  vehicleConnection?: Resolver<Maybe<ResolversTypes['PersonVehiclesConnection']>, ParentType, ContextType, Partial<PersonvehicleConnectionArgs>>;
+  homeworld?: Resolver<Maybe<ResolversTypes['starwars_Planet']>, ParentType, ContextType>;
+  filmConnection?: Resolver<Maybe<ResolversTypes['starwars_PersonFilmsConnection']>, ParentType, ContextType, Partial<starwars_PersonfilmConnectionArgs>>;
+  species?: Resolver<Maybe<ResolversTypes['starwars_Species']>, ParentType, ContextType>;
+  starshipConnection?: Resolver<Maybe<ResolversTypes['starwars_PersonStarshipsConnection']>, ParentType, ContextType, Partial<starwars_PersonstarshipConnectionArgs>>;
+  vehicleConnection?: Resolver<Maybe<ResolversTypes['starwars_PersonVehiclesConnection']>, ParentType, ContextType, Partial<starwars_PersonvehicleConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonFilmsConnection'] = ResolversParentTypes['PersonFilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PersonFilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_PersonFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonFilmsConnection'] = ResolversParentTypes['starwars_PersonFilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PersonFilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonFilmsEdge'] = ResolversParentTypes['PersonFilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_PersonFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonFilmsEdge'] = ResolversParentTypes['starwars_PersonFilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonStarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonStarshipsConnection'] = ResolversParentTypes['PersonStarshipsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PersonStarshipsEdge']>>>, ParentType, ContextType>;
+export type starwars_PersonStarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonStarshipsConnection'] = ResolversParentTypes['starwars_PersonStarshipsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PersonStarshipsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['Starship']>>>, ParentType, ContextType>;
+  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Starship']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonStarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonStarshipsEdge'] = ResolversParentTypes['PersonStarshipsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Starship']>, ParentType, ContextType>;
+export type starwars_PersonStarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonStarshipsEdge'] = ResolversParentTypes['starwars_PersonStarshipsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Starship']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Starship'] = ResolversParentTypes['Starship']> = ResolversObject<{
+export type starwars_StarshipResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Starship'] = ResolversParentTypes['starwars_Starship']> = ResolversObject<{
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   model?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   starshipClass?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -1795,57 +1795,57 @@ export type StarshipResolvers<ContextType = MeshContext, ParentType extends Reso
   MGLT?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   cargoCapacity?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   consumables?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  pilotConnection?: Resolver<Maybe<ResolversTypes['StarshipPilotsConnection']>, ParentType, ContextType, Partial<StarshippilotConnectionArgs>>;
-  filmConnection?: Resolver<Maybe<ResolversTypes['StarshipFilmsConnection']>, ParentType, ContextType, Partial<StarshipfilmConnectionArgs>>;
+  pilotConnection?: Resolver<Maybe<ResolversTypes['starwars_StarshipPilotsConnection']>, ParentType, ContextType, Partial<starwars_StarshippilotConnectionArgs>>;
+  filmConnection?: Resolver<Maybe<ResolversTypes['starwars_StarshipFilmsConnection']>, ParentType, ContextType, Partial<starwars_StarshipfilmConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipPilotsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipPilotsConnection'] = ResolversParentTypes['StarshipPilotsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['StarshipPilotsEdge']>>>, ParentType, ContextType>;
+export type starwars_StarshipPilotsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipPilotsConnection'] = ResolversParentTypes['starwars_StarshipPilotsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_StarshipPilotsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  pilots?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  pilots?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipPilotsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipPilotsEdge'] = ResolversParentTypes['StarshipPilotsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_StarshipPilotsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipPilotsEdge'] = ResolversParentTypes['starwars_StarshipPilotsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipFilmsConnection'] = ResolversParentTypes['StarshipFilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['StarshipFilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_StarshipFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipFilmsConnection'] = ResolversParentTypes['starwars_StarshipFilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_StarshipFilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipFilmsEdge'] = ResolversParentTypes['StarshipFilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_StarshipFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipFilmsEdge'] = ResolversParentTypes['starwars_StarshipFilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonVehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonVehiclesConnection'] = ResolversParentTypes['PersonVehiclesConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PersonVehiclesEdge']>>>, ParentType, ContextType>;
+export type starwars_PersonVehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonVehiclesConnection'] = ResolversParentTypes['starwars_PersonVehiclesConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PersonVehiclesEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['Vehicle']>>>, ParentType, ContextType>;
+  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Vehicle']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PersonVehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PersonVehiclesEdge'] = ResolversParentTypes['PersonVehiclesEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Vehicle']>, ParentType, ContextType>;
+export type starwars_PersonVehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PersonVehiclesEdge'] = ResolversParentTypes['starwars_PersonVehiclesEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Vehicle']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehicleResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Vehicle'] = ResolversParentTypes['Vehicle']> = ResolversObject<{
+export type starwars_VehicleResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_Vehicle'] = ResolversParentTypes['starwars_Vehicle']> = ResolversObject<{
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   model?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   vehicleClass?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -1857,237 +1857,237 @@ export type VehicleResolvers<ContextType = MeshContext, ParentType extends Resol
   maxAtmospheringSpeed?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   cargoCapacity?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   consumables?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  pilotConnection?: Resolver<Maybe<ResolversTypes['VehiclePilotsConnection']>, ParentType, ContextType, Partial<VehiclepilotConnectionArgs>>;
-  filmConnection?: Resolver<Maybe<ResolversTypes['VehicleFilmsConnection']>, ParentType, ContextType, Partial<VehiclefilmConnectionArgs>>;
+  pilotConnection?: Resolver<Maybe<ResolversTypes['starwars_VehiclePilotsConnection']>, ParentType, ContextType, Partial<starwars_VehiclepilotConnectionArgs>>;
+  filmConnection?: Resolver<Maybe<ResolversTypes['starwars_VehicleFilmsConnection']>, ParentType, ContextType, Partial<starwars_VehiclefilmConnectionArgs>>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   edited?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehiclePilotsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehiclePilotsConnection'] = ResolversParentTypes['VehiclePilotsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['VehiclePilotsEdge']>>>, ParentType, ContextType>;
+export type starwars_VehiclePilotsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehiclePilotsConnection'] = ResolversParentTypes['starwars_VehiclePilotsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_VehiclePilotsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  pilots?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  pilots?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehiclePilotsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehiclePilotsEdge'] = ResolversParentTypes['VehiclePilotsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_VehiclePilotsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehiclePilotsEdge'] = ResolversParentTypes['starwars_VehiclePilotsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehicleFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehicleFilmsConnection'] = ResolversParentTypes['VehicleFilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['VehicleFilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_VehicleFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehicleFilmsConnection'] = ResolversParentTypes['starwars_VehicleFilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_VehicleFilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehicleFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehicleFilmsEdge'] = ResolversParentTypes['VehicleFilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_VehicleFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehicleFilmsEdge'] = ResolversParentTypes['starwars_VehicleFilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetFilmsConnection'] = ResolversParentTypes['PlanetFilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PlanetFilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_PlanetFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetFilmsConnection'] = ResolversParentTypes['starwars_PlanetFilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PlanetFilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetFilmsEdge'] = ResolversParentTypes['PlanetFilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_PlanetFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetFilmsEdge'] = ResolversParentTypes['starwars_PlanetFilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesPeopleConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesPeopleConnection'] = ResolversParentTypes['SpeciesPeopleConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['SpeciesPeopleEdge']>>>, ParentType, ContextType>;
+export type starwars_SpeciesPeopleConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesPeopleConnection'] = ResolversParentTypes['starwars_SpeciesPeopleConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_SpeciesPeopleEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  people?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  people?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesPeopleEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesPeopleEdge'] = ResolversParentTypes['SpeciesPeopleEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_SpeciesPeopleEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesPeopleEdge'] = ResolversParentTypes['starwars_SpeciesPeopleEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesFilmsConnection'] = ResolversParentTypes['SpeciesFilmsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['SpeciesFilmsEdge']>>>, ParentType, ContextType>;
+export type starwars_SpeciesFilmsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesFilmsConnection'] = ResolversParentTypes['starwars_SpeciesFilmsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_SpeciesFilmsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['Film']>>>, ParentType, ContextType>;
+  films?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Film']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesFilmsEdge'] = ResolversParentTypes['SpeciesFilmsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Film']>, ParentType, ContextType>;
+export type starwars_SpeciesFilmsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesFilmsEdge'] = ResolversParentTypes['starwars_SpeciesFilmsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Film']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmStarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmStarshipsConnection'] = ResolversParentTypes['FilmStarshipsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmStarshipsEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmStarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmStarshipsConnection'] = ResolversParentTypes['starwars_FilmStarshipsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmStarshipsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['Starship']>>>, ParentType, ContextType>;
+  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Starship']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmStarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmStarshipsEdge'] = ResolversParentTypes['FilmStarshipsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Starship']>, ParentType, ContextType>;
+export type starwars_FilmStarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmStarshipsEdge'] = ResolversParentTypes['starwars_FilmStarshipsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Starship']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmVehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmVehiclesConnection'] = ResolversParentTypes['FilmVehiclesConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmVehiclesEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmVehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmVehiclesConnection'] = ResolversParentTypes['starwars_FilmVehiclesConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmVehiclesEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['Vehicle']>>>, ParentType, ContextType>;
+  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Vehicle']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmVehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmVehiclesEdge'] = ResolversParentTypes['FilmVehiclesEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Vehicle']>, ParentType, ContextType>;
+export type starwars_FilmVehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmVehiclesEdge'] = ResolversParentTypes['starwars_FilmVehiclesEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Vehicle']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmCharactersConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmCharactersConnection'] = ResolversParentTypes['FilmCharactersConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmCharactersEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmCharactersConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmCharactersConnection'] = ResolversParentTypes['starwars_FilmCharactersConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmCharactersEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  characters?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  characters?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmCharactersEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmCharactersEdge'] = ResolversParentTypes['FilmCharactersEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_FilmCharactersEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmCharactersEdge'] = ResolversParentTypes['starwars_FilmCharactersEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmPlanetsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmPlanetsConnection'] = ResolversParentTypes['FilmPlanetsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['FilmPlanetsEdge']>>>, ParentType, ContextType>;
+export type starwars_FilmPlanetsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmPlanetsConnection'] = ResolversParentTypes['starwars_FilmPlanetsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_FilmPlanetsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  planets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Planet']>>>, ParentType, ContextType>;
+  planets?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Planet']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type FilmPlanetsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['FilmPlanetsEdge'] = ResolversParentTypes['FilmPlanetsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Planet']>, ParentType, ContextType>;
+export type starwars_FilmPlanetsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_FilmPlanetsEdge'] = ResolversParentTypes['starwars_FilmPlanetsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Planet']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PeopleConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PeopleConnection'] = ResolversParentTypes['PeopleConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PeopleEdge']>>>, ParentType, ContextType>;
+export type starwars_PeopleConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PeopleConnection'] = ResolversParentTypes['starwars_PeopleConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PeopleEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  people?: Resolver<Maybe<Array<Maybe<ResolversTypes['Person']>>>, ParentType, ContextType>;
+  people?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Person']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PeopleEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PeopleEdge'] = ResolversParentTypes['PeopleEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Person']>, ParentType, ContextType>;
+export type starwars_PeopleEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PeopleEdge'] = ResolversParentTypes['starwars_PeopleEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Person']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetsConnection'] = ResolversParentTypes['PlanetsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['PlanetsEdge']>>>, ParentType, ContextType>;
+export type starwars_PlanetsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetsConnection'] = ResolversParentTypes['starwars_PlanetsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_PlanetsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  planets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Planet']>>>, ParentType, ContextType>;
+  planets?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Planet']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type PlanetsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['PlanetsEdge'] = ResolversParentTypes['PlanetsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Planet']>, ParentType, ContextType>;
+export type starwars_PlanetsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_PlanetsEdge'] = ResolversParentTypes['starwars_PlanetsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Planet']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesConnection'] = ResolversParentTypes['SpeciesConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['SpeciesEdge']>>>, ParentType, ContextType>;
+export type starwars_SpeciesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesConnection'] = ResolversParentTypes['starwars_SpeciesConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_SpeciesEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  species?: Resolver<Maybe<Array<Maybe<ResolversTypes['Species']>>>, ParentType, ContextType>;
+  species?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Species']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SpeciesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['SpeciesEdge'] = ResolversParentTypes['SpeciesEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType>;
+export type starwars_SpeciesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_SpeciesEdge'] = ResolversParentTypes['starwars_SpeciesEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Species']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipsConnection'] = ResolversParentTypes['StarshipsConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['StarshipsEdge']>>>, ParentType, ContextType>;
+export type starwars_StarshipsConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipsConnection'] = ResolversParentTypes['starwars_StarshipsConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_StarshipsEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['Starship']>>>, ParentType, ContextType>;
+  starships?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Starship']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['StarshipsEdge'] = ResolversParentTypes['StarshipsEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Starship']>, ParentType, ContextType>;
+export type starwars_StarshipsEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_StarshipsEdge'] = ResolversParentTypes['starwars_StarshipsEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Starship']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehiclesConnection'] = ResolversParentTypes['VehiclesConnection']> = ResolversObject<{
-  pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['VehiclesEdge']>>>, ParentType, ContextType>;
+export type starwars_VehiclesConnectionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehiclesConnection'] = ResolversParentTypes['starwars_VehiclesConnection']> = ResolversObject<{
+  pageInfo?: Resolver<ResolversTypes['starwars_PageInfo'], ParentType, ContextType>;
+  edges?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_VehiclesEdge']>>>, ParentType, ContextType>;
   totalCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['Vehicle']>>>, ParentType, ContextType>;
+  vehicles?: Resolver<Maybe<Array<Maybe<ResolversTypes['starwars_Vehicle']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type VehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['VehiclesEdge'] = ResolversParentTypes['VehiclesEdge']> = ResolversObject<{
-  node?: Resolver<Maybe<ResolversTypes['Vehicle']>, ParentType, ContextType>;
+export type starwars_VehiclesEdgeResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['starwars_VehiclesEdge'] = ResolversParentTypes['starwars_VehiclesEdge']> = ResolversObject<{
+  node?: Resolver<Maybe<ResolversTypes['starwars_Vehicle']>, ParentType, ContextType>;
   cursor?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type ContinentResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Continent'] = ResolversParentTypes['Continent']> = ResolversObject<{
+export type countries_ContinentResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['countries_Continent'] = ResolversParentTypes['countries_Continent']> = ResolversObject<{
   code?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  countries?: Resolver<Array<ResolversTypes['Country']>, ParentType, ContextType>;
+  countries?: Resolver<Array<ResolversTypes['countries_Country']>, ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type CountryResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Country'] = ResolversParentTypes['Country']> = ResolversObject<{
+export type countries_CountryResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['countries_Country'] = ResolversParentTypes['countries_Country']> = ResolversObject<{
   awsRegion?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   capital?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   code?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  continent?: Resolver<ResolversTypes['Continent'], ParentType, ContextType>;
+  continent?: Resolver<ResolversTypes['countries_Continent'], ParentType, ContextType>;
   currencies?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   currency?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   emoji?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   emojiU?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  languages?: Resolver<Array<ResolversTypes['Language']>, ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType, Partial<CountrynameArgs>>;
+  languages?: Resolver<Array<ResolversTypes['countries_Language']>, ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType, Partial<countries_CountrynameArgs>>;
   native?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   phone?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   phones?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
-  states?: Resolver<Array<ResolversTypes['State']>, ParentType, ContextType>;
-  subdivisions?: Resolver<Array<ResolversTypes['Subdivision']>, ParentType, ContextType>;
+  states?: Resolver<Array<ResolversTypes['countries_State']>, ParentType, ContextType>;
+  subdivisions?: Resolver<Array<ResolversTypes['countries_Subdivision']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type LanguageResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Language'] = ResolversParentTypes['Language']> = ResolversObject<{
+export type countries_LanguageResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['countries_Language'] = ResolversParentTypes['countries_Language']> = ResolversObject<{
   code?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   native?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -2095,14 +2095,14 @@ export type LanguageResolvers<ContextType = MeshContext, ParentType extends Reso
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type StateResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['State'] = ResolversParentTypes['State']> = ResolversObject<{
+export type countries_StateResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['countries_State'] = ResolversParentTypes['countries_State']> = ResolversObject<{
   code?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  country?: Resolver<ResolversTypes['Country'], ParentType, ContextType>;
+  country?: Resolver<ResolversTypes['countries_Country'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type SubdivisionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Subdivision'] = ResolversParentTypes['Subdivision']> = ResolversObject<{
+export type countries_SubdivisionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['countries_Subdivision'] = ResolversParentTypes['countries_Subdivision']> = ResolversObject<{
   code?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   emoji?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -2111,63 +2111,63 @@ export type SubdivisionResolvers<ContextType = MeshContext, ParentType extends R
 
 export type Resolvers<ContextType = MeshContext> = ResolversObject<{
   Query?: QueryResolvers<ContextType>;
-  FilmsConnection?: FilmsConnectionResolvers<ContextType>;
-  PageInfo?: PageInfoResolvers<ContextType>;
-  FilmsEdge?: FilmsEdgeResolvers<ContextType>;
-  Film?: FilmResolvers<ContextType>;
-  Node?: NodeResolvers<ContextType>;
-  FilmSpeciesConnection?: FilmSpeciesConnectionResolvers<ContextType>;
-  FilmSpeciesEdge?: FilmSpeciesEdgeResolvers<ContextType>;
-  Species?: SpeciesResolvers<ContextType>;
-  Planet?: PlanetResolvers<ContextType>;
-  PlanetResidentsConnection?: PlanetResidentsConnectionResolvers<ContextType>;
-  PlanetResidentsEdge?: PlanetResidentsEdgeResolvers<ContextType>;
-  Person?: PersonResolvers<ContextType>;
-  PersonFilmsConnection?: PersonFilmsConnectionResolvers<ContextType>;
-  PersonFilmsEdge?: PersonFilmsEdgeResolvers<ContextType>;
-  PersonStarshipsConnection?: PersonStarshipsConnectionResolvers<ContextType>;
-  PersonStarshipsEdge?: PersonStarshipsEdgeResolvers<ContextType>;
-  Starship?: StarshipResolvers<ContextType>;
-  StarshipPilotsConnection?: StarshipPilotsConnectionResolvers<ContextType>;
-  StarshipPilotsEdge?: StarshipPilotsEdgeResolvers<ContextType>;
-  StarshipFilmsConnection?: StarshipFilmsConnectionResolvers<ContextType>;
-  StarshipFilmsEdge?: StarshipFilmsEdgeResolvers<ContextType>;
-  PersonVehiclesConnection?: PersonVehiclesConnectionResolvers<ContextType>;
-  PersonVehiclesEdge?: PersonVehiclesEdgeResolvers<ContextType>;
-  Vehicle?: VehicleResolvers<ContextType>;
-  VehiclePilotsConnection?: VehiclePilotsConnectionResolvers<ContextType>;
-  VehiclePilotsEdge?: VehiclePilotsEdgeResolvers<ContextType>;
-  VehicleFilmsConnection?: VehicleFilmsConnectionResolvers<ContextType>;
-  VehicleFilmsEdge?: VehicleFilmsEdgeResolvers<ContextType>;
-  PlanetFilmsConnection?: PlanetFilmsConnectionResolvers<ContextType>;
-  PlanetFilmsEdge?: PlanetFilmsEdgeResolvers<ContextType>;
-  SpeciesPeopleConnection?: SpeciesPeopleConnectionResolvers<ContextType>;
-  SpeciesPeopleEdge?: SpeciesPeopleEdgeResolvers<ContextType>;
-  SpeciesFilmsConnection?: SpeciesFilmsConnectionResolvers<ContextType>;
-  SpeciesFilmsEdge?: SpeciesFilmsEdgeResolvers<ContextType>;
-  FilmStarshipsConnection?: FilmStarshipsConnectionResolvers<ContextType>;
-  FilmStarshipsEdge?: FilmStarshipsEdgeResolvers<ContextType>;
-  FilmVehiclesConnection?: FilmVehiclesConnectionResolvers<ContextType>;
-  FilmVehiclesEdge?: FilmVehiclesEdgeResolvers<ContextType>;
-  FilmCharactersConnection?: FilmCharactersConnectionResolvers<ContextType>;
-  FilmCharactersEdge?: FilmCharactersEdgeResolvers<ContextType>;
-  FilmPlanetsConnection?: FilmPlanetsConnectionResolvers<ContextType>;
-  FilmPlanetsEdge?: FilmPlanetsEdgeResolvers<ContextType>;
-  PeopleConnection?: PeopleConnectionResolvers<ContextType>;
-  PeopleEdge?: PeopleEdgeResolvers<ContextType>;
-  PlanetsConnection?: PlanetsConnectionResolvers<ContextType>;
-  PlanetsEdge?: PlanetsEdgeResolvers<ContextType>;
-  SpeciesConnection?: SpeciesConnectionResolvers<ContextType>;
-  SpeciesEdge?: SpeciesEdgeResolvers<ContextType>;
-  StarshipsConnection?: StarshipsConnectionResolvers<ContextType>;
-  StarshipsEdge?: StarshipsEdgeResolvers<ContextType>;
-  VehiclesConnection?: VehiclesConnectionResolvers<ContextType>;
-  VehiclesEdge?: VehiclesEdgeResolvers<ContextType>;
-  Continent?: ContinentResolvers<ContextType>;
-  Country?: CountryResolvers<ContextType>;
-  Language?: LanguageResolvers<ContextType>;
-  State?: StateResolvers<ContextType>;
-  Subdivision?: SubdivisionResolvers<ContextType>;
+  starwars_FilmsConnection?: starwars_FilmsConnectionResolvers<ContextType>;
+  starwars_PageInfo?: starwars_PageInfoResolvers<ContextType>;
+  starwars_FilmsEdge?: starwars_FilmsEdgeResolvers<ContextType>;
+  starwars_Film?: starwars_FilmResolvers<ContextType>;
+  starwars_Node?: starwars_NodeResolvers<ContextType>;
+  starwars_FilmSpeciesConnection?: starwars_FilmSpeciesConnectionResolvers<ContextType>;
+  starwars_FilmSpeciesEdge?: starwars_FilmSpeciesEdgeResolvers<ContextType>;
+  starwars_Species?: starwars_SpeciesResolvers<ContextType>;
+  starwars_Planet?: starwars_PlanetResolvers<ContextType>;
+  starwars_PlanetResidentsConnection?: starwars_PlanetResidentsConnectionResolvers<ContextType>;
+  starwars_PlanetResidentsEdge?: starwars_PlanetResidentsEdgeResolvers<ContextType>;
+  starwars_Person?: starwars_PersonResolvers<ContextType>;
+  starwars_PersonFilmsConnection?: starwars_PersonFilmsConnectionResolvers<ContextType>;
+  starwars_PersonFilmsEdge?: starwars_PersonFilmsEdgeResolvers<ContextType>;
+  starwars_PersonStarshipsConnection?: starwars_PersonStarshipsConnectionResolvers<ContextType>;
+  starwars_PersonStarshipsEdge?: starwars_PersonStarshipsEdgeResolvers<ContextType>;
+  starwars_Starship?: starwars_StarshipResolvers<ContextType>;
+  starwars_StarshipPilotsConnection?: starwars_StarshipPilotsConnectionResolvers<ContextType>;
+  starwars_StarshipPilotsEdge?: starwars_StarshipPilotsEdgeResolvers<ContextType>;
+  starwars_StarshipFilmsConnection?: starwars_StarshipFilmsConnectionResolvers<ContextType>;
+  starwars_StarshipFilmsEdge?: starwars_StarshipFilmsEdgeResolvers<ContextType>;
+  starwars_PersonVehiclesConnection?: starwars_PersonVehiclesConnectionResolvers<ContextType>;
+  starwars_PersonVehiclesEdge?: starwars_PersonVehiclesEdgeResolvers<ContextType>;
+  starwars_Vehicle?: starwars_VehicleResolvers<ContextType>;
+  starwars_VehiclePilotsConnection?: starwars_VehiclePilotsConnectionResolvers<ContextType>;
+  starwars_VehiclePilotsEdge?: starwars_VehiclePilotsEdgeResolvers<ContextType>;
+  starwars_VehicleFilmsConnection?: starwars_VehicleFilmsConnectionResolvers<ContextType>;
+  starwars_VehicleFilmsEdge?: starwars_VehicleFilmsEdgeResolvers<ContextType>;
+  starwars_PlanetFilmsConnection?: starwars_PlanetFilmsConnectionResolvers<ContextType>;
+  starwars_PlanetFilmsEdge?: starwars_PlanetFilmsEdgeResolvers<ContextType>;
+  starwars_SpeciesPeopleConnection?: starwars_SpeciesPeopleConnectionResolvers<ContextType>;
+  starwars_SpeciesPeopleEdge?: starwars_SpeciesPeopleEdgeResolvers<ContextType>;
+  starwars_SpeciesFilmsConnection?: starwars_SpeciesFilmsConnectionResolvers<ContextType>;
+  starwars_SpeciesFilmsEdge?: starwars_SpeciesFilmsEdgeResolvers<ContextType>;
+  starwars_FilmStarshipsConnection?: starwars_FilmStarshipsConnectionResolvers<ContextType>;
+  starwars_FilmStarshipsEdge?: starwars_FilmStarshipsEdgeResolvers<ContextType>;
+  starwars_FilmVehiclesConnection?: starwars_FilmVehiclesConnectionResolvers<ContextType>;
+  starwars_FilmVehiclesEdge?: starwars_FilmVehiclesEdgeResolvers<ContextType>;
+  starwars_FilmCharactersConnection?: starwars_FilmCharactersConnectionResolvers<ContextType>;
+  starwars_FilmCharactersEdge?: starwars_FilmCharactersEdgeResolvers<ContextType>;
+  starwars_FilmPlanetsConnection?: starwars_FilmPlanetsConnectionResolvers<ContextType>;
+  starwars_FilmPlanetsEdge?: starwars_FilmPlanetsEdgeResolvers<ContextType>;
+  starwars_PeopleConnection?: starwars_PeopleConnectionResolvers<ContextType>;
+  starwars_PeopleEdge?: starwars_PeopleEdgeResolvers<ContextType>;
+  starwars_PlanetsConnection?: starwars_PlanetsConnectionResolvers<ContextType>;
+  starwars_PlanetsEdge?: starwars_PlanetsEdgeResolvers<ContextType>;
+  starwars_SpeciesConnection?: starwars_SpeciesConnectionResolvers<ContextType>;
+  starwars_SpeciesEdge?: starwars_SpeciesEdgeResolvers<ContextType>;
+  starwars_StarshipsConnection?: starwars_StarshipsConnectionResolvers<ContextType>;
+  starwars_StarshipsEdge?: starwars_StarshipsEdgeResolvers<ContextType>;
+  starwars_VehiclesConnection?: starwars_VehiclesConnectionResolvers<ContextType>;
+  starwars_VehiclesEdge?: starwars_VehiclesEdgeResolvers<ContextType>;
+  countries_Continent?: countries_ContinentResolvers<ContextType>;
+  countries_Country?: countries_CountryResolvers<ContextType>;
+  countries_Language?: countries_LanguageResolvers<ContextType>;
+  countries_State?: countries_StateResolvers<ContextType>;
+  countries_Subdivision?: countries_SubdivisionResolvers<ContextType>;
 }>;
 
 

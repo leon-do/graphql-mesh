@@ -21,24 +21,24 @@ export type Scalars = {
 };
 
 export type Root = {
-  allFilms?: Maybe<FilmsConnection>;
-  film?: Maybe<Film>;
-  allPeople?: Maybe<PeopleConnection>;
-  person?: Maybe<Person>;
-  allPlanets?: Maybe<PlanetsConnection>;
-  planet?: Maybe<Planet>;
-  allSpecies?: Maybe<SpeciesConnection>;
-  species?: Maybe<Species>;
-  allStarships?: Maybe<StarshipsConnection>;
-  starship?: Maybe<Starship>;
-  allVehicles?: Maybe<VehiclesConnection>;
-  vehicle?: Maybe<Vehicle>;
+  starwars_allFilms?: Maybe<starwars_FilmsConnection>;
+  starwars_film?: Maybe<starwars_Film>;
+  starwars_allPeople?: Maybe<starwars_PeopleConnection>;
+  starwars_person?: Maybe<starwars_Person>;
+  starwars_allPlanets?: Maybe<starwars_PlanetsConnection>;
+  starwars_planet?: Maybe<starwars_Planet>;
+  starwars_allSpecies?: Maybe<starwars_SpeciesConnection>;
+  starwars_species?: Maybe<starwars_Species>;
+  starwars_allStarships?: Maybe<starwars_StarshipsConnection>;
+  starwars_starship?: Maybe<starwars_Starship>;
+  starwars_allVehicles?: Maybe<starwars_VehiclesConnection>;
+  starwars_vehicle?: Maybe<starwars_Vehicle>;
   /** Fetches an object given its ID */
-  node?: Maybe<Node>;
+  starwars_node?: Maybe<starwars_Node>;
 };
 
 
-export type RootallFilmsArgs = {
+export type Rootstarwars_allFilmsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -46,13 +46,13 @@ export type RootallFilmsArgs = {
 };
 
 
-export type RootfilmArgs = {
+export type Rootstarwars_filmArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   filmID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootallPeopleArgs = {
+export type Rootstarwars_allPeopleArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -60,13 +60,13 @@ export type RootallPeopleArgs = {
 };
 
 
-export type RootpersonArgs = {
+export type Rootstarwars_personArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   personID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootallPlanetsArgs = {
+export type Rootstarwars_allPlanetsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -74,13 +74,13 @@ export type RootallPlanetsArgs = {
 };
 
 
-export type RootplanetArgs = {
+export type Rootstarwars_planetArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   planetID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootallSpeciesArgs = {
+export type Rootstarwars_allSpeciesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -88,13 +88,13 @@ export type RootallSpeciesArgs = {
 };
 
 
-export type RootspeciesArgs = {
+export type Rootstarwars_speciesArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   speciesID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootallStarshipsArgs = {
+export type Rootstarwars_allStarshipsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -102,13 +102,13 @@ export type RootallStarshipsArgs = {
 };
 
 
-export type RootstarshipArgs = {
+export type Rootstarwars_starshipArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   starshipID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootallVehiclesArgs = {
+export type Rootstarwars_allVehiclesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -116,22 +116,22 @@ export type RootallVehiclesArgs = {
 };
 
 
-export type RootvehicleArgs = {
+export type Rootstarwars_vehicleArgs = {
   id?: InputMaybe<Scalars['ID']['input']>;
   vehicleID?: InputMaybe<Scalars['ID']['input']>;
 };
 
 
-export type RootnodeArgs = {
+export type Rootstarwars_nodeArgs = {
   id: Scalars['ID']['input'];
 };
 
 /** A connection to a list of items. */
-export type FilmsConnection = {
+export type starwars_FilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -147,11 +147,11 @@ export type FilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** Information about pagination in a connection. */
-export type PageInfo = {
+export type starwars_PageInfo = {
   /** When paginating forwards, are there more items? */
   hasNextPage: Scalars['Boolean']['output'];
   /** When paginating backwards, are there more items? */
@@ -163,15 +163,15 @@ export type PageInfo = {
 };
 
 /** An edge in a connection. */
-export type FilmsEdge = {
+export type starwars_FilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single film. */
-export type Film = Node & {
+export type starwars_Film = starwars_Node & {
   /** The title of this film. */
   title?: Maybe<Scalars['String']['output']>;
   /** The episode number of this film. */
@@ -184,11 +184,11 @@ export type Film = Node & {
   producers?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   /** The ISO 8601 date format of film release at original creator country. */
   releaseDate?: Maybe<Scalars['String']['output']>;
-  speciesConnection?: Maybe<FilmSpeciesConnection>;
-  starshipConnection?: Maybe<FilmStarshipsConnection>;
-  vehicleConnection?: Maybe<FilmVehiclesConnection>;
-  characterConnection?: Maybe<FilmCharactersConnection>;
-  planetConnection?: Maybe<FilmPlanetsConnection>;
+  speciesConnection?: Maybe<starwars_FilmSpeciesConnection>;
+  starshipConnection?: Maybe<starwars_FilmStarshipsConnection>;
+  vehicleConnection?: Maybe<starwars_FilmVehiclesConnection>;
+  characterConnection?: Maybe<starwars_FilmCharactersConnection>;
+  planetConnection?: Maybe<starwars_FilmPlanetsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -199,7 +199,7 @@ export type Film = Node & {
 
 
 /** A single film. */
-export type FilmspeciesConnectionArgs = {
+export type starwars_FilmspeciesConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -208,7 +208,7 @@ export type FilmspeciesConnectionArgs = {
 
 
 /** A single film. */
-export type FilmstarshipConnectionArgs = {
+export type starwars_FilmstarshipConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -217,7 +217,7 @@ export type FilmstarshipConnectionArgs = {
 
 
 /** A single film. */
-export type FilmvehicleConnectionArgs = {
+export type starwars_FilmvehicleConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -226,7 +226,7 @@ export type FilmvehicleConnectionArgs = {
 
 
 /** A single film. */
-export type FilmcharacterConnectionArgs = {
+export type starwars_FilmcharacterConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -235,7 +235,7 @@ export type FilmcharacterConnectionArgs = {
 
 
 /** A single film. */
-export type FilmplanetConnectionArgs = {
+export type starwars_FilmplanetConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -243,17 +243,17 @@ export type FilmplanetConnectionArgs = {
 };
 
 /** An object with an ID */
-export type Node = {
+export type starwars_Node = {
   /** The id of the object. */
   id: Scalars['ID']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmSpeciesConnection = {
+export type starwars_FilmSpeciesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmSpeciesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmSpeciesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -269,19 +269,19 @@ export type FilmSpeciesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  species?: Maybe<Array<Maybe<Species>>>;
+  species?: Maybe<Array<Maybe<starwars_Species>>>;
 };
 
 /** An edge in a connection. */
-export type FilmSpeciesEdge = {
+export type starwars_FilmSpeciesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Species>;
+  node?: Maybe<starwars_Species>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A type of person or character within the Star Wars Universe. */
-export type Species = Node & {
+export type starwars_Species = starwars_Node & {
   /** The name of this species. */
   name?: Maybe<Scalars['String']['output']>;
   /** The classification of this species, such as "mammal" or "reptile". */
@@ -310,9 +310,9 @@ export type Species = Node & {
   /** The language commonly spoken by this species. */
   language?: Maybe<Scalars['String']['output']>;
   /** A planet that this species originates from. */
-  homeworld?: Maybe<Planet>;
-  personConnection?: Maybe<SpeciesPeopleConnection>;
-  filmConnection?: Maybe<SpeciesFilmsConnection>;
+  homeworld?: Maybe<starwars_Planet>;
+  personConnection?: Maybe<starwars_SpeciesPeopleConnection>;
+  filmConnection?: Maybe<starwars_SpeciesFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -323,7 +323,7 @@ export type Species = Node & {
 
 
 /** A type of person or character within the Star Wars Universe. */
-export type SpeciespersonConnectionArgs = {
+export type starwars_SpeciespersonConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -332,7 +332,7 @@ export type SpeciespersonConnectionArgs = {
 
 
 /** A type of person or character within the Star Wars Universe. */
-export type SpeciesfilmConnectionArgs = {
+export type starwars_SpeciesfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -343,7 +343,7 @@ export type SpeciesfilmConnectionArgs = {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type Planet = Node & {
+export type starwars_Planet = starwars_Node & {
   /** The name of this planet. */
   name?: Maybe<Scalars['String']['output']>;
   /** The diameter of this planet in kilometers. */
@@ -374,8 +374,8 @@ export type Planet = Node & {
    * of water.
    */
   surfaceWater?: Maybe<Scalars['Float']['output']>;
-  residentConnection?: Maybe<PlanetResidentsConnection>;
-  filmConnection?: Maybe<PlanetFilmsConnection>;
+  residentConnection?: Maybe<starwars_PlanetResidentsConnection>;
+  filmConnection?: Maybe<starwars_PlanetFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -389,7 +389,7 @@ export type Planet = Node & {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type PlanetresidentConnectionArgs = {
+export type starwars_PlanetresidentConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -401,7 +401,7 @@ export type PlanetresidentConnectionArgs = {
  * A large mass, planet or planetoid in the Star Wars Universe, at the time of
  * 0 ABY.
  */
-export type PlanetfilmConnectionArgs = {
+export type starwars_PlanetfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -409,11 +409,11 @@ export type PlanetfilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type PlanetResidentsConnection = {
+export type starwars_PlanetResidentsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetResidentsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetResidentsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -429,19 +429,19 @@ export type PlanetResidentsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  residents?: Maybe<Array<Maybe<Person>>>;
+  residents?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetResidentsEdge = {
+export type starwars_PlanetResidentsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** An individual person or character within the Star Wars universe. */
-export type Person = Node & {
+export type starwars_Person = starwars_Node & {
   /** The name of this person. */
   name?: Maybe<Scalars['String']['output']>;
   /**
@@ -472,12 +472,12 @@ export type Person = Node & {
   /** The skin color of this person. */
   skinColor?: Maybe<Scalars['String']['output']>;
   /** A planet that this person was born on or inhabits. */
-  homeworld?: Maybe<Planet>;
-  filmConnection?: Maybe<PersonFilmsConnection>;
+  homeworld?: Maybe<starwars_Planet>;
+  filmConnection?: Maybe<starwars_PersonFilmsConnection>;
   /** The species that this person belongs to, or null if unknown. */
-  species?: Maybe<Species>;
-  starshipConnection?: Maybe<PersonStarshipsConnection>;
-  vehicleConnection?: Maybe<PersonVehiclesConnection>;
+  species?: Maybe<starwars_Species>;
+  starshipConnection?: Maybe<starwars_PersonStarshipsConnection>;
+  vehicleConnection?: Maybe<starwars_PersonVehiclesConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -488,7 +488,7 @@ export type Person = Node & {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonfilmConnectionArgs = {
+export type starwars_PersonfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -497,7 +497,7 @@ export type PersonfilmConnectionArgs = {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonstarshipConnectionArgs = {
+export type starwars_PersonstarshipConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -506,7 +506,7 @@ export type PersonstarshipConnectionArgs = {
 
 
 /** An individual person or character within the Star Wars universe. */
-export type PersonvehicleConnectionArgs = {
+export type starwars_PersonvehicleConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -514,11 +514,11 @@ export type PersonvehicleConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type PersonFilmsConnection = {
+export type starwars_PersonFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -534,23 +534,23 @@ export type PersonFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type PersonFilmsEdge = {
+export type starwars_PersonFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PersonStarshipsConnection = {
+export type starwars_PersonStarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonStarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonStarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -566,19 +566,19 @@ export type PersonStarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type PersonStarshipsEdge = {
+export type starwars_PersonStarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single transport craft that has hyperdrive capability. */
-export type Starship = Node & {
+export type starwars_Starship = starwars_Node & {
   /** The name of this starship. The common name, such as "Death Star". */
   name?: Maybe<Scalars['String']['output']>;
   /**
@@ -623,8 +623,8 @@ export type Starship = Node & {
    * entire crew without having to resupply.
    */
   consumables?: Maybe<Scalars['String']['output']>;
-  pilotConnection?: Maybe<StarshipPilotsConnection>;
-  filmConnection?: Maybe<StarshipFilmsConnection>;
+  pilotConnection?: Maybe<starwars_StarshipPilotsConnection>;
+  filmConnection?: Maybe<starwars_StarshipFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -635,7 +635,7 @@ export type Starship = Node & {
 
 
 /** A single transport craft that has hyperdrive capability. */
-export type StarshippilotConnectionArgs = {
+export type starwars_StarshippilotConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -644,7 +644,7 @@ export type StarshippilotConnectionArgs = {
 
 
 /** A single transport craft that has hyperdrive capability. */
-export type StarshipfilmConnectionArgs = {
+export type starwars_StarshipfilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -652,11 +652,11 @@ export type StarshipfilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type StarshipPilotsConnection = {
+export type starwars_StarshipPilotsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipPilotsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipPilotsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -672,23 +672,23 @@ export type StarshipPilotsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  pilots?: Maybe<Array<Maybe<Person>>>;
+  pilots?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipPilotsEdge = {
+export type starwars_StarshipPilotsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type StarshipFilmsConnection = {
+export type starwars_StarshipFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -704,23 +704,23 @@ export type StarshipFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipFilmsEdge = {
+export type starwars_StarshipFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PersonVehiclesConnection = {
+export type starwars_PersonVehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PersonVehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PersonVehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -736,19 +736,19 @@ export type PersonVehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type PersonVehiclesEdge = {
+export type starwars_PersonVehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A single transport craft that does not have hyperdrive capability */
-export type Vehicle = Node & {
+export type starwars_Vehicle = starwars_Node & {
   /**
    * The name of this vehicle. The common name, such as "Sand Crawler" or "Speeder
    * bike".
@@ -780,8 +780,8 @@ export type Vehicle = Node & {
    * entire crew without having to resupply.
    */
   consumables?: Maybe<Scalars['String']['output']>;
-  pilotConnection?: Maybe<VehiclePilotsConnection>;
-  filmConnection?: Maybe<VehicleFilmsConnection>;
+  pilotConnection?: Maybe<starwars_VehiclePilotsConnection>;
+  filmConnection?: Maybe<starwars_VehicleFilmsConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created?: Maybe<Scalars['String']['output']>;
   /** The ISO 8601 date format of the time that this resource was edited. */
@@ -792,7 +792,7 @@ export type Vehicle = Node & {
 
 
 /** A single transport craft that does not have hyperdrive capability */
-export type VehiclepilotConnectionArgs = {
+export type starwars_VehiclepilotConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -801,7 +801,7 @@ export type VehiclepilotConnectionArgs = {
 
 
 /** A single transport craft that does not have hyperdrive capability */
-export type VehiclefilmConnectionArgs = {
+export type starwars_VehiclefilmConnectionArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
@@ -809,11 +809,11 @@ export type VehiclefilmConnectionArgs = {
 };
 
 /** A connection to a list of items. */
-export type VehiclePilotsConnection = {
+export type starwars_VehiclePilotsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehiclePilotsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehiclePilotsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -829,23 +829,23 @@ export type VehiclePilotsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  pilots?: Maybe<Array<Maybe<Person>>>;
+  pilots?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type VehiclePilotsEdge = {
+export type starwars_VehiclePilotsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type VehicleFilmsConnection = {
+export type starwars_VehicleFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehicleFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehicleFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -861,23 +861,23 @@ export type VehicleFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type VehicleFilmsEdge = {
+export type starwars_VehicleFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PlanetFilmsConnection = {
+export type starwars_PlanetFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -893,23 +893,23 @@ export type PlanetFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetFilmsEdge = {
+export type starwars_PlanetFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesPeopleConnection = {
+export type starwars_SpeciesPeopleConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesPeopleEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesPeopleEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -925,23 +925,23 @@ export type SpeciesPeopleConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  people?: Maybe<Array<Maybe<Person>>>;
+  people?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesPeopleEdge = {
+export type starwars_SpeciesPeopleEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesFilmsConnection = {
+export type starwars_SpeciesFilmsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesFilmsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesFilmsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -957,23 +957,23 @@ export type SpeciesFilmsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  films?: Maybe<Array<Maybe<Film>>>;
+  films?: Maybe<Array<Maybe<starwars_Film>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesFilmsEdge = {
+export type starwars_SpeciesFilmsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Film>;
+  node?: Maybe<starwars_Film>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmStarshipsConnection = {
+export type starwars_FilmStarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmStarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmStarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -989,23 +989,23 @@ export type FilmStarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type FilmStarshipsEdge = {
+export type starwars_FilmStarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmVehiclesConnection = {
+export type starwars_FilmVehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmVehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmVehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1021,23 +1021,23 @@ export type FilmVehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type FilmVehiclesEdge = {
+export type starwars_FilmVehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmCharactersConnection = {
+export type starwars_FilmCharactersConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmCharactersEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmCharactersEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1053,23 +1053,23 @@ export type FilmCharactersConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  characters?: Maybe<Array<Maybe<Person>>>;
+  characters?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type FilmCharactersEdge = {
+export type starwars_FilmCharactersEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type FilmPlanetsConnection = {
+export type starwars_FilmPlanetsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<FilmPlanetsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_FilmPlanetsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1085,23 +1085,23 @@ export type FilmPlanetsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  planets?: Maybe<Array<Maybe<Planet>>>;
+  planets?: Maybe<Array<Maybe<starwars_Planet>>>;
 };
 
 /** An edge in a connection. */
-export type FilmPlanetsEdge = {
+export type starwars_FilmPlanetsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Planet>;
+  node?: Maybe<starwars_Planet>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PeopleConnection = {
+export type starwars_PeopleConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PeopleEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PeopleEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1117,23 +1117,23 @@ export type PeopleConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  people?: Maybe<Array<Maybe<Person>>>;
+  people?: Maybe<Array<Maybe<starwars_Person>>>;
 };
 
 /** An edge in a connection. */
-export type PeopleEdge = {
+export type starwars_PeopleEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Person>;
+  node?: Maybe<starwars_Person>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type PlanetsConnection = {
+export type starwars_PlanetsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<PlanetsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_PlanetsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1149,23 +1149,23 @@ export type PlanetsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  planets?: Maybe<Array<Maybe<Planet>>>;
+  planets?: Maybe<Array<Maybe<starwars_Planet>>>;
 };
 
 /** An edge in a connection. */
-export type PlanetsEdge = {
+export type starwars_PlanetsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Planet>;
+  node?: Maybe<starwars_Planet>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type SpeciesConnection = {
+export type starwars_SpeciesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<SpeciesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_SpeciesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1181,23 +1181,23 @@ export type SpeciesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  species?: Maybe<Array<Maybe<Species>>>;
+  species?: Maybe<Array<Maybe<starwars_Species>>>;
 };
 
 /** An edge in a connection. */
-export type SpeciesEdge = {
+export type starwars_SpeciesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Species>;
+  node?: Maybe<starwars_Species>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type StarshipsConnection = {
+export type starwars_StarshipsConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<StarshipsEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_StarshipsEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1213,23 +1213,23 @@ export type StarshipsConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  starships?: Maybe<Array<Maybe<Starship>>>;
+  starships?: Maybe<Array<Maybe<starwars_Starship>>>;
 };
 
 /** An edge in a connection. */
-export type StarshipsEdge = {
+export type starwars_StarshipsEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Starship>;
+  node?: Maybe<starwars_Starship>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
 /** A connection to a list of items. */
-export type VehiclesConnection = {
+export type starwars_VehiclesConnection = {
   /** Information to aid in pagination. */
-  pageInfo: PageInfo;
+  pageInfo: starwars_PageInfo;
   /** A list of edges. */
-  edges?: Maybe<Array<Maybe<VehiclesEdge>>>;
+  edges?: Maybe<Array<Maybe<starwars_VehiclesEdge>>>;
   /**
    * A count of the total number of objects in this connection, ignoring pagination.
    * This allows a client to fetch the first five objects by passing "5" as the
@@ -1245,44 +1245,44 @@ export type VehiclesConnection = {
    * the edge to enable efficient pagination, this shortcut cannot be used, and the
    * full "{ edges { node } }" version should be used instead.
    */
-  vehicles?: Maybe<Array<Maybe<Vehicle>>>;
+  vehicles?: Maybe<Array<Maybe<starwars_Vehicle>>>;
 };
 
 /** An edge in a connection. */
-export type VehiclesEdge = {
+export type starwars_VehiclesEdge = {
   /** The item at the end of the edge */
-  node?: Maybe<Vehicle>;
+  node?: Maybe<starwars_Vehicle>;
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
 };
 
   export type QuerySdk = {
       /** null **/
-  allFilms: InContextSdkMethod<Root['allFilms'], RootallFilmsArgs, MeshContext>,
+  starwars_allFilms: InContextSdkMethod<Root['starwars_allFilms'], Rootstarwars_allFilmsArgs, MeshContext>,
   /** null **/
-  film: InContextSdkMethod<Root['film'], RootfilmArgs, MeshContext>,
+  starwars_film: InContextSdkMethod<Root['starwars_film'], Rootstarwars_filmArgs, MeshContext>,
   /** null **/
-  allPeople: InContextSdkMethod<Root['allPeople'], RootallPeopleArgs, MeshContext>,
+  starwars_allPeople: InContextSdkMethod<Root['starwars_allPeople'], Rootstarwars_allPeopleArgs, MeshContext>,
   /** null **/
-  person: InContextSdkMethod<Root['person'], RootpersonArgs, MeshContext>,
+  starwars_person: InContextSdkMethod<Root['starwars_person'], Rootstarwars_personArgs, MeshContext>,
   /** null **/
-  allPlanets: InContextSdkMethod<Root['allPlanets'], RootallPlanetsArgs, MeshContext>,
+  starwars_allPlanets: InContextSdkMethod<Root['starwars_allPlanets'], Rootstarwars_allPlanetsArgs, MeshContext>,
   /** null **/
-  planet: InContextSdkMethod<Root['planet'], RootplanetArgs, MeshContext>,
+  starwars_planet: InContextSdkMethod<Root['starwars_planet'], Rootstarwars_planetArgs, MeshContext>,
   /** null **/
-  allSpecies: InContextSdkMethod<Root['allSpecies'], RootallSpeciesArgs, MeshContext>,
+  starwars_allSpecies: InContextSdkMethod<Root['starwars_allSpecies'], Rootstarwars_allSpeciesArgs, MeshContext>,
   /** null **/
-  species: InContextSdkMethod<Root['species'], RootspeciesArgs, MeshContext>,
+  starwars_species: InContextSdkMethod<Root['starwars_species'], Rootstarwars_speciesArgs, MeshContext>,
   /** null **/
-  allStarships: InContextSdkMethod<Root['allStarships'], RootallStarshipsArgs, MeshContext>,
+  starwars_allStarships: InContextSdkMethod<Root['starwars_allStarships'], Rootstarwars_allStarshipsArgs, MeshContext>,
   /** null **/
-  starship: InContextSdkMethod<Root['starship'], RootstarshipArgs, MeshContext>,
+  starwars_starship: InContextSdkMethod<Root['starwars_starship'], Rootstarwars_starshipArgs, MeshContext>,
   /** null **/
-  allVehicles: InContextSdkMethod<Root['allVehicles'], RootallVehiclesArgs, MeshContext>,
+  starwars_allVehicles: InContextSdkMethod<Root['starwars_allVehicles'], Rootstarwars_allVehiclesArgs, MeshContext>,
   /** null **/
-  vehicle: InContextSdkMethod<Root['vehicle'], RootvehicleArgs, MeshContext>,
+  starwars_vehicle: InContextSdkMethod<Root['starwars_vehicle'], Rootstarwars_vehicleArgs, MeshContext>,
   /** Fetches an object given its ID **/
-  node: InContextSdkMethod<Film | Species | Planet | Person | Starship | Vehicle, RootnodeArgs, MeshContext>
+  starwars_node: InContextSdkMethod<starwars_Film | starwars_Species | starwars_Planet | starwars_Person | starwars_Starship | starwars_Vehicle, Rootstarwars_nodeArgs, MeshContext>
   };
 
   export type MutationSdk = {
