@@ -17,3 +17,4 @@ sources:
           includeRootOperations: true
 serve:
   playground: true
+  endpoint: /api/graphql # This is the actual endpoint to the API route
